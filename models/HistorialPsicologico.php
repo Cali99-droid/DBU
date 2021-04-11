@@ -7,11 +7,16 @@ class HistorialPsicologico extends Model {
 			$$key = $value;
 		}
 
+		$this->query = "CALL INSERTAR_PSICOLOGIA('$estado_psi', '$descripcion_psi', '$fecha', $idpaciente,
+		'$diagnostico','$tratamiento')";
+/*
 		$this->query = "REPLACE INTO psicologicos SET idpsicologia = '$idpsicologia', estado_psi = '$estado_psi',
 		descripcion_psi='$descripcion_psi', fecha='$fecha', idpaciente = '$idpaciente', diagnostico='$diagnostico',
 		tratamiento='$tratamiento'";
-
-        $this->set_query();
+*/
+        $mensaje = $this->set_query();
+		
+		return $mensaje;
 	}
 
 	public function get( $idpsicologia = '' ) {

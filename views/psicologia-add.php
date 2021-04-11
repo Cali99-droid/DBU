@@ -19,8 +19,8 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
             <form method="POST" class="formulario__entrada">
 
                 <div class="campo">
-                <label for="codigo" class="campo__label">Codigo</label>
-                <input class="campo__field" type="text" placeholder="Codigo de paciente" name="codigo">
+                <label for="codigo" class="campo__label">DNI</label>
+                <input class="campo__field" type="text" placeholder="DNI " name="codigo">
                 </div>
                 <div class="campo">
                     <label for="estado_psi" class="campo__label">Estado</label>
@@ -74,10 +74,11 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
 	);
 
 	$psi = $psi_controller->set($new_psi);
+  
 
 	$template = '
 		<div class="container">
-			<p class="item  add">Paciente <b>%s</b> salvada</p>
+			<p class="item  add">Se inserto el apciente %s</p>
 		</div>
         <script>
         function reloadPage(url) {
@@ -92,7 +93,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
         
 	';
 
-	printf($template, $_POST['codigo']);
+	printf($template,  $_POST['codigo']);
 } else {
 	$controller = new ViewController();
 	$controller->load_view('error404'); //401

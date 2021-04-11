@@ -30,8 +30,10 @@ abstract class Model {
 
 	protected function set_query() {
 		$this->db_open();
-		$this->conn->query($this->query);
+		$mensaje = $this->conn->query($this->query);
+		
 		$this->db_close();
+		return $mensaje;
 	}
 
 	protected function get_query() {

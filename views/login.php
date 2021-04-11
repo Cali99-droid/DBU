@@ -6,12 +6,13 @@ print('
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/normalize.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/normalize.css">
     <title>Login</title>
 </head>
 <body>
 	<main class="contenido">
+
 
 		<div class="contenido__titulo">
 		
@@ -19,6 +20,10 @@ print('
 		</div>
 		
 		<div class="entrada">
+			<div class="header">
+				<img class="img-unasam" src="public/img/escudoUNASAM.png" alt="">
+				<h2 class="titulo ">Direccion de Bienestar Universitario</h2>
+		    </div> 
 			<h1 class="no-margin titulo--log">Bienvenido</h1>     
 			<form action="" class="formulario" method = "POST">
 				<div class="campo">
@@ -36,11 +41,7 @@ print('
 				</div>   
 			</form>
 		</div>
-		<div class="header">
-			<img class="img-unasam" src="public/img/escudoUNASAM.png" alt="">
-			<h2 class="titulo ">Direccion de Bienestar Universitario</h2>
-			
-		</div> 
+		
 
 	</main>
 

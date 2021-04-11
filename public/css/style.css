@@ -231,8 +231,8 @@ body{
     height: 30rem;
 
 }
-.entrada{
-    margin-top: 12rem;
+.entrada{   /*MOD*/ 
+    margin-top: 0rem; 
     padding: 0 5rem;
    
 }
@@ -241,6 +241,7 @@ body{
     font-size: 5rem;
     color: rgb(37,71,106);
     margin-bottom: 3rem;
+    
 }
 
 .campo{
