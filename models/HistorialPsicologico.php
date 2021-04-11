@@ -14,9 +14,9 @@ class HistorialPsicologico extends Model {
 		descripcion_psi='$descripcion_psi', fecha='$fecha', idpaciente = '$idpaciente', diagnostico='$diagnostico',
 		tratamiento='$tratamiento'";
 */
-        $mensaje = $this->set_query();
+        $row = $this->set_query();
 		
-		return $mensaje;
+		return $row;
 	}
 
 	public function get( $idpsicologia = '' ) {

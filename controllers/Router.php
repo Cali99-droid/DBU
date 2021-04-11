@@ -86,9 +86,9 @@ class Router {
 					$_SESSION['ok'] = true;
 
 					foreach ($session as $row) {
-						$_SESSION['user'] = $row['user'];
-						$_SESSION['idpersona'] = $row['idpersona'];
-						$_SESSION['idrol'] = $row['idrol'];
+						$_SESSION['nombre'] = $row['nombre'];
+						$_SESSION['rol'] = $row['rol'];
+					//	$_SESSION['idrol'] = $row['idrol'];
 					}
 					header('Location: ./');
 				}

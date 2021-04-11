@@ -35,7 +35,10 @@ class UsersModel extends Model {
 	}
 
 	public function validate_user($user, $pass) {
-		$this->query = "SELECT * FROM cuentas WHERE user = '$user' AND pass = '$pass'";
+		$this->query = "SELECT CONCAT(p.nom_per, '  ', p.ape_pat) nombre, r.rol 
+		FROM cuentas c INNER JOIN personas p on c.idpersona = p.idpersona
+	                   INNER JOIN roles r on c.idrol = r.idrol
+		 WHERE user = '$user' AND pass = '$pass'";
 		$this->get_query();
 
 		$data = array();

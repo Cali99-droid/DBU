@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
 
 
 	//$psicologia_select = '';
@@ -20,21 +20,21 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
 
                 <div class="campo">
                 <label for="codigo" class="campo__label">DNI</label>
-                <input class="campo__field" type="text" placeholder="DNI " name="codigo">
+                <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" required>
                 </div>
                 <div class="campo">
                     <label for="estado_psi" class="campo__label">Estado</label>
-                    <input class="campo__field" type="text" placeholder="" id="estado_psi" name="estado_psi">
+                    <input class="campo__field" type="text" placeholder="" id="estado_psi" name="estado_psi" required>
                 </div>
 
                 <div class="campo">
                     <label for="descripcion_psi" class="campo__label">Descripcion</label>
-                    <input class="campo__field" type="text"  name="descripcion_psi">
+                    <input   class="campo__field" type="text"  name="descripcion_psi" required>
                 </div>
 
                 <div class="campo">
                     <label for="fecha" class="campo__label">Fecha</label>
-                    <input  class="campo__field" name="fecha" ></input>
+                    <input  class="campo__field" name="fecha"  required></input>
                 </div>
 
                 <div class="campo">
@@ -58,7 +58,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
     </div>
 	');	
 
-} else if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && $_POST['crud'] == 'set' ) {
     $psi_controller = new PsiController();
     $indice = 0;
     
@@ -74,11 +74,11 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
 	);
 
 	$psi = $psi_controller->set($new_psi);
-  
-
-	$template = '
+    $mensaje = 'INSERTADO CON ÉXITO';
+    if($psi[0] == $mensaje ){
+        $template = '
 		<div class="container">
-			<p class="item  add">Se inserto el apciente %s</p>
+			<p class="exito">%s</p>
 		</div>
         <script>
         function reloadPage(url) {
@@ -93,8 +93,32 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['idrol'] == 4 && !isset($_POST[
         
 	';
 
-	printf($template,  $_POST['codigo']);
+    } else{
+        $template = '
+		<div class="container">
+			<p class="error">%s</p>
+		</div>
+        <script>
+        function reloadPage(url) {
+            setTimeout(function (){
+                window.location.href = url
+            }, 2000)
+        }
+        window.onload = function () {
+            reloadPage("psicologia")
+        }
+        </script>
+        
+	';
+    }
+	
+
+        printf($template,  $psi[0]);
+    
+	
 } else {
 	$controller = new ViewController();
 	$controller->load_view('error404'); //401
 }
+
+/*  */

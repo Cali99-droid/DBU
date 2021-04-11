@@ -15,7 +15,7 @@ $template = '
                         <img class="card__img--perfil" src="public/img/profile.svg" alt="imagen de perfil">
                      </div>
                     <h2>%s</h2>
-                    <p>%s</p>
+                    <p class="p_rol">%s</p>
                 </div>
                 <div class="card">
                     <div class="card__img">
@@ -57,8 +57,8 @@ $template = '
 
 printf(
 	$template,
-	$_SESSION['idpersona'],
-	$_SESSION['user'],
-	$_SESSION['idrol']
+	$_SESSION['nombre'],
+	$_SESSION['nombre'],
+	$_SESSION['rol']
 
 );
