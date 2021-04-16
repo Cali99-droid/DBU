@@ -379,6 +379,16 @@ tr:hover {background-color:#ffffff;}
 
 }
 
+.boton--nuevo{
+    padding: 1rem;
+    font-size: 1.8rem;
+    background-color: rgb(114, 219, 73);
+}
+.boton--nuevo:hover{
+    background-color: rgb(114, 219, 73);
+    opacity: .6;
+}
+
 .guardar_psi{
     grid-column: 2/ 3;
 

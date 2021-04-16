@@ -42,7 +42,7 @@ if( empty($psicologia) ) {
 						<th>
 						<form method="POST">
 								<input type="hidden" name="r" value="psicologia-add">
-								<input class="" type="submit" value="Nuevo">
+								<input class="boton boton--nuevo" type="submit" value="Nuevo">
 						</form>
 						</th>
 						
