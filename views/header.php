@@ -11,10 +11,10 @@ print('
 <body>
 <main class="contenido-principal">
 <div class="barra">
-	<div class="barra__logo">
+	<a class="barra__logo" href="home">
 		<img class="img-unasam"src="public/img/escudoUNASAM.png" alt="escudo unasam">
-		<h2>DIRECCION DE BIENESTAR UNIVERSITARIO</h2>
-	</div>
+		<h2 class="inicio">DIRECCION DE BIENESTAR UNIVERSITARIO</h2>
+	</a>
 	<div class="barra__opciones">
 			<a class="opcion" href="home">  
 				<svg class="opcion__log" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"">

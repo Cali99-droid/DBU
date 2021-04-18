@@ -10,41 +10,41 @@ $template = '
                 <div class="gestion__grafico card">
                    <!--<img class="gestion__img" src="public/img/portada.jpg" alt="">--> 
                 </div>
-                <div class="card">
+                <a class="card"  href="perfil">
                     <div class="card__img--nombre">
                         <img class="card__img--perfil" src="public/img/profile.svg" alt="imagen de perfil">
                      </div>
                     <h2>%s</h2>
                     <p class="p_rol">%s</p>
-                </div>
-                <div class="card">
-                    <div class="card__img">
+                </a>
+                <a class="card" href="topico">
+                    <div class="card__img"  >
                         <img class="card__port" src="public/img/topico.jpg" alt="">
-                        <a href="#" class="card__enlace">Gestion Topico</a>
+                        <p href="#" class="card__enlace">Gestion Topico</p>
                      </div>
                     
-                </div>
-                <div class="card">
+                </a>
+                <a class="card"  href="medicina">
                     <div class="card__img">
                         <img class="card__port" src="public/img/medico.jpg" alt="">
-                        <a href="#" class="card__enlace">Gestion Medico</a>
+                        <p  class="card__enlace">Gestion Medico</p>
                      </div> 
                     
-                </div>
-                <div class="card">
+                </a>
+                <a class="card" href="psicologia">
                     <div class="card__img">
                         <img class="card__port" src="public/img/psicologia.jpg" alt="">
-                        <a href="psicologia" class="card__enlace">Gestion Psicologico</a>
+                        <p class="card__enlace">Gestion Psicologico</p>
                      </div>
                     
-                </div>
-                <div class="card">
+                </a>
+                <a class="card"  href="odontologia">
                     <div class="card__img">
                        <img class="card__port" src="public/img/odontologia.jpg" alt="">
-                       <a href="#" class="card__enlace">Gestion Odontologico</a>
+                       <p  class="card__enlace">Gestion Odontologico</p>
                     </div> 
 
-                </div>
+                </a>
             </div>
 
         </div>

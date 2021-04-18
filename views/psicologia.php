@@ -64,13 +64,13 @@ if( empty($psicologia) ) {
 							<form method="POST">
 								<input type="hidden" name="r" value="psicologia-edit">
 								<input type="hidden" name="idpsicologia" value="' .$psicologia[$n]['idpsicologia'] . '">
-								<input class="btn btn-primary float-right mx-2" type="submit" value="Editar">
+								<input class="boton--editar" type="submit" value="">
 							</form>
 					
 							<form method="POST">
 								<input type="hidden" name="r" value="psicologia-delete">
 								<input type="hidden" name="idpsicologia" value="' . $psicologia[$n]['idpsicologia'] . '">
-								<input class="btn btn-danger float-right mx-2" type="submit" value="Eliminar">
+								<input class="boton--eliminar" type="submit" value="">
 							</form>
 						</td>
 					</tr>

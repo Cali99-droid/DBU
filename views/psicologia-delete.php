@@ -33,7 +33,7 @@ if( $_POST['r'] == 'psicologia-delete' && $_SESSION['rol'] == 'psicologo' && !is
 				</div>
 				<div class="pregunta__opciones">
 					<input  class=" boton boton--no_eliminar" type="submit" value="SI">
-					<input class="boton boton--eliminar" type="button" value="NO" onclick="history.back()">
+					<input class="boton boton--negar" type="button" value="NO" onclick="history.back()">
 					<input type="hidden" name="idpsicologia" value="%s">
 					<input type="hidden" name="r" value="psicologia-delete">
 					<input type="hidden" name="crud" value="del">
