@@ -34,8 +34,8 @@ class Router {
 				case 'psicologia':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('psicologia');
 					else if( $_POST['r'] == 'psicologia-add' )  $controller->load_view('psicologia-add');
-					else if( $_POST['r'] == 'movieserie-edit' )  $controller->load_view('movieserie-edit');
-					else if( $_POST['r'] == 'movieserie-delete' )  $controller->load_view('movieserie-delete');
+					else if( $_POST['r'] == 'psicologia-edit' )  $controller->load_view('psicologia-edit');
+					else if( $_POST['r'] == 'psicologia-delete' )  $controller->load_view('psicologia-delete');
 					else if( $_POST['r'] == 'movieserie-show' )  $controller->load_view('movieserie-show');
 					break;
 

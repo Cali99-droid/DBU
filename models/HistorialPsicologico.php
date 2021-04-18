@@ -7,7 +7,7 @@ class HistorialPsicologico extends Model {
 			$$key = $value;
 		}
 
-		$this->query = "CALL INSERTAR_PSICOLOGIA('$estado_psi', '$descripcion_psi', '$fecha', $idpaciente,
+		$this->query = "CALL INSERTAR_PSICOLOGIA('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
 		'$diagnostico','$tratamiento')";
 /*
 		$this->query = "REPLACE INTO psicologicos SET idpsicologia = '$idpsicologia', estado_psi = '$estado_psi',
@@ -39,7 +39,7 @@ class HistorialPsicologico extends Model {
 
 	public function del( $idpsicologia = '' ) {
 		$this->query = "DELETE FROM  psicologicos WHERE idpsicologia = $idpsicologia";
-		$this->set_query();
+		$this->del_query();
 	}
 
 }

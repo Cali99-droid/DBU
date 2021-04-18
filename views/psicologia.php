@@ -62,14 +62,14 @@ if( empty($psicologia) ) {
 					
 						<td  class="action">
 							<form method="POST">
-								<input type="hidden" name="r" value="status-edit">
-								<input type="hidden" name="status_id" value="' .$psicologia[$n]['idpsicologia'] . '">
+								<input type="hidden" name="r" value="psicologia-edit">
+								<input type="hidden" name="idpsicologia" value="' .$psicologia[$n]['idpsicologia'] . '">
 								<input class="btn btn-primary float-right mx-2" type="submit" value="Editar">
 							</form>
 					
 							<form method="POST">
-								<input type="hidden" name="r" value="status-delete">
-								<input type="hidden" name="status_id" value="' . $psicologia[$n]['idpsicologia'] . '">
+								<input type="hidden" name="r" value="psicologia-delete">
+								<input type="hidden" name="idpsicologia" value="' . $psicologia[$n]['idpsicologia'] . '">
 								<input class="btn btn-danger float-right mx-2" type="submit" value="Eliminar">
 							</form>
 						</td>

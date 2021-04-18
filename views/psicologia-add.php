@@ -67,7 +67,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
 		'estado_psi' =>  $_POST['estado_psi'], 
 		'descripcion_psi' =>  $_POST['descripcion_psi'], 
 		'fecha' =>  $_POST['fecha'],
-		'idpaciente' =>  $_POST['codigo'],  /* TODO */
+		'codigo' =>  $_POST['codigo'],  /* TODO */
 		'diagnostico' =>  $_POST['diagnostico'],
 		'tratamiento' =>  $_POST['tratamiento'],
 	
