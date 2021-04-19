@@ -4,6 +4,7 @@ $psi_controller = new PsiController();
 if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
 
 	$psi = $psi_controller->get($_POST['idpsicologia']);
+    $dni = $_POST['dni_per'];
 
 	if( empty($psi) ) {
 		$template = '
@@ -93,7 +94,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset
 		printf(
 			$template_psi,
 		
-            $psi[0]['idpaciente'],
+            $dni,
 			$psi[0]['estado_psi'],
 			$psi[0]['descripcion_psi'],
 			$psi[0]['fecha'],
@@ -114,12 +115,13 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset
         'codigo' =>  $_POST['codigo'],
 		'diagnostico' =>  $_POST['diagnostico'],
 		'tratamiento' =>  $_POST['tratamiento'],
+        'idpsicologia' => $_POST['idpsicologia']
 
 	);
 
-	$psi = $psi_controller->set($save_psi);
+	$psi = $psi_controller->update($save_psi);
     $mensajeC = 'INSERTADO CON ÉXITO';
-    $mensajeU = 'ACTUALIZADO  CON ÉXITO';
+    $mensajeU = 'ACTUALIZADO CON ÉXITO';
     if($psi[0] == $mensajeC || $psi[0] == $mensajeU ){
         $template = '
 		<div class="container">

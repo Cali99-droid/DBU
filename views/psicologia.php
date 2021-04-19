@@ -31,13 +31,13 @@ if( empty($psicologia) ) {
 		<div class="contenedor ">   
 			<div class="contenedor__tabla">    
 				<table class="tabla">
-					<thead>
+					<thead >
 					<tr>
 						<th>Id</th>
+						<th>Paciente</th>
 						<th>Estado</th>
 						<th>Descripcion</th>
 						<th>Fecha</th>
-						<th>idpaciente</th>
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
@@ -53,17 +53,19 @@ if( empty($psicologia) ) {
 			for ($n=0; $n < count($psicologia); $n++) { 
 				$template_psicologia .= '
 					<tr>
-						<td>' . $psicologia[$n]['idpsicologia'] . '</td>
+					    
+						<td>' .  $psicologia[$n]['idpsicologia'] . '</td>
+						<td>' .  $psicologia[$n]['Paciente'] . '</td>
 						<td>' .  $psicologia[$n]['estado_psi'] . '</td>
 						<td>' .  $psicologia[$n]['descripcion_psi'] . '</td>
 						<td>' .  $psicologia[$n]['fecha'] . '</td> 
-						<td>' .  $psicologia[$n]['idpaciente'] . '</td>
 
 					
 						<td  class="action">
 							<form method="POST">
 								<input type="hidden" name="r" value="psicologia-edit">
 								<input type="hidden" name="idpsicologia" value="' .$psicologia[$n]['idpsicologia'] . '">
+								<input type="hidden" name="dni_per" value="' .$psicologia[$n]['dni_per'] . '">
 								<input class="boton--editar" type="submit" value="">
 							</form>
 					

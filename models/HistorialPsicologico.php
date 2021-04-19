@@ -21,8 +21,8 @@ class HistorialPsicologico extends Model {
 
 	public function get( $idpsicologia = '' ) {
 		$this->query = ($idpsicologia != '')
-			?"SELECT * FROM psicologicos WHERE idpsicologia = $idpsicologia"
-			:"SELECT * FROM psicologicos";
+			?"SELECT * FROM Vista_PacientePsicologico WHERE idpsicologia = $idpsicologia"
+			:"SELECT * FROM Vista_PacientePsicologico;";
 		
 		$this->get_query();
 
@@ -40,6 +40,18 @@ class HistorialPsicologico extends Model {
 	public function del( $idpsicologia = '' ) {
 		$this->query = "DELETE FROM  psicologicos WHERE idpsicologia = $idpsicologia";
 		$this->del_query();
+	}
+
+	public function update( $psicologico_data = array() ) {
+		foreach ($psicologico_data as $key => $value) {
+			$$key = $value;
+		}
+
+		$this->query = "CALL ACTUALIZAR_PSICOLOGIA('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
+		'$diagnostico','$tratamiento', '$idpsicologia')";
+        $row = $this->set_query();
+		
+		return $row;
 	}
 
 }

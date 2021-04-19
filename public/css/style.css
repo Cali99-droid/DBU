@@ -58,7 +58,7 @@ body{
     
     max-width: 50%;
     
-    margin-top: 3rem;
+    margin-top: 1rem;
 
 }
 .inicio{
@@ -330,6 +330,7 @@ body{
 }
 /*tabla*/
 
+
 .contenedor__tabla{
     height: 450px !important;
     overflow: auto;
@@ -344,9 +345,9 @@ body{
 
   th, td {
     padding: 8px;
-    text-align: left;
     border-bottom: 1px solid #ddd;
   }
+
 
 .tabla th {
   padding-top: 12px;
@@ -356,6 +357,9 @@ body{
   color: white;
   text-transform: uppercase;
 }
+
+
+
 .action{
     display: flex;
     justify-content: center;
