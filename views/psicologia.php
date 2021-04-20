@@ -74,6 +74,11 @@ if( empty($psicologia) ) {
 								<input type="hidden" name="idpsicologia" value="' . $psicologia[$n]['idpsicologia'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>
+							<form method="POST">
+								<input type="hidden" name="r" value="psicologia-report">
+								<input type="hidden" name="idpsicologia" value="' . $psicologia[$n]['idpsicologia'] . '">
+								<input class="" type="submit" value="Reporte">
+							</form>
 						</td>
 					</tr>
 			'; 

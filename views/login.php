@@ -11,9 +11,9 @@ print('
     <title>Login</title>
 </head>
 <body>
-	<main class="contenido">
+	<main class="main__login">
 
-
+      <div  class="contenido">
 		<div class="contenido__titulo">
 		
 			<img class="contenido__imagen" src="public/img/Medicos.png" alt="Medicos">
@@ -41,17 +41,20 @@ print('
 				</div>   
 			</form>
 		</div>
+	</div>
 		
-
-	</main>
-
-	</body>
-</html>
+	
 ');
 
 if( isset($_GET['error']) ) {
-	$template = '	
-			<p class="error no-margin">%s</p>
+	$template = '
+	<div class="error">	
+			<p class="no-margin">%s</p>
+	</div>
+	
+	</main>
+  </body>
+</html>
 	';
 
 	printf($template, $_GET['error']);

@@ -208,11 +208,15 @@ body{
 
 
 /*Login*/
+.main__login{
+    height: 100vh;
+}
 
 .contenido{
-    height: 55.2rem;
-    justify-content: center;
+  
     display: flex;
+    justify-content: center;
+
 
 
 }
@@ -242,7 +246,7 @@ body{
     margin-top: 5rem;
     text-align: center;
     height: 20rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
 }
 .entrada{   /*MOD*/ 
@@ -254,7 +258,7 @@ body{
 .entrada h1{
     font-size: 5rem;
     color: rgb(37,71,106);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     
 }
 
@@ -302,7 +306,7 @@ body{
     
 }
 .error{
-
+    margin: 0;
     background-color: red;
 
 }

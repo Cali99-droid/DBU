@@ -1,15 +1,16 @@
   
 <?php 
 if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
-
-
+   
+     $fecha =  date("Y-m-d");
+     $fecha = date("Y-m-d",strtotime($fecha."- 1 days")); 
 	//$psicologia_select = '';
 /*/
 	for ($n=0; $n < count($status); $n++) { 
 		$status_select .= '<option value="' . $status[$n]['status_id'] . '">' . $status[$n]['status'] . '</option>';
 	}
     */
-	print('
+	printf('
     <div class="gestion">
         <div class="gestion__nombre">
             <h2 class="no-margin gestion__titulo">Ingresar Datos</h2>
@@ -34,7 +35,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
 
                 <div class="campo">
                     <label for="fecha" class="campo__label">Fecha</label>
-                    <input  class="campo__field" name="fecha"  required></input>
+                    <input  type="date" class="campo__field" name="fecha"  value="%s"></input>
                 </div>
 
                 <div class="campo">
@@ -56,7 +57,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
         </div>
         
     </div>
-	');	
+	', $fecha);	
 
 } else if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && $_POST['crud'] == 'set' ) {
     $psi_controller = new PsiController();
