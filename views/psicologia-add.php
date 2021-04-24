@@ -3,7 +3,8 @@
 if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
-     $fecha = date("Y-m-d",strtotime($fecha."- 1 days")); 
+   
+ 
 	//$psicologia_select = '';
 /*/
 	for ($n=0; $n < count($status); $n++) { 
@@ -35,7 +36,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
 
                 <div class="campo">
                     <label for="fecha" class="campo__label">Fecha</label>
-                    <input  type="date" class="campo__field" name="fecha"  value="%s"></input>
+                    <input  type="text" class="campo__field" name="fecha"  value="%s"></input>
                 </div>
 
                 <div class="campo">
@@ -62,12 +63,13 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
 } else if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && $_POST['crud'] == 'set' ) {
     $psi_controller = new PsiController();
     $indice = 0;
-    
+
+
 	$new_psi = array(
 		'idpsicologia' =>  $indice,
 		'estado_psi' =>  $_POST['estado_psi'], 
 		'descripcion_psi' =>  $_POST['descripcion_psi'], 
-		'fecha' =>  $_POST['fecha'],
+		'fecha' => $_POST['fecha'],
 		'codigo' =>  $_POST['codigo'],  /* TODO */
 		'diagnostico' =>  $_POST['diagnostico'],
 		'tratamiento' =>  $_POST['tratamiento'],

@@ -41,7 +41,7 @@ if( empty($medicina) ) {
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
-								<input type="hidden" name="r" value="psicologia-add">
+								<input type="hidden" name="r" value="medicina-add">
 								<input class="boton boton--nuevo" type="submit" value="Nuevo">
 						</form>
 						</th>

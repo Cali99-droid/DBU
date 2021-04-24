@@ -45,6 +45,7 @@ body{
     text-align: center;
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.9);
     z-index: 1;
+
 }
 
 .barra__logo{
@@ -226,9 +227,6 @@ body{
     text-align: center;
     font-size: 1.8rem;
     color: rgb(37,71,106);
- 
- 
-
 }
 
 
@@ -266,6 +264,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    color: black;
 }
 
 .campo__label{
@@ -278,6 +277,11 @@ body{
 .campo__field{
     height: 2.5rem;
     padding: 2rem;
+    font-size: 2rem;
+}
+
+.campo__field--select{
+    height: 4rem;
     font-size: 2rem;
 }
 
@@ -310,10 +314,18 @@ body{
     background-color: red;
 
 }
-/*Psicologia*/
+/*Areas*/
+
+.gestion__area{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 6rem 0rem 6rem;
+
+}
 
 .busqueda{
-    margin-top: 4rem;
+     
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -331,6 +343,25 @@ body{
 .campo__buscar{
     padding: 1rem;
     font-size: 2rem;
+}
+
+.campo__med{
+    gap: 1rem;
+    color: inherit;
+}
+
+.dni__med{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.campo:last-of-type{
+   margin-bottom: 0;
+}
+
+.grupo{
+    border-color: 1px solid var(--primario);
+    color: var(--primario);
 }
 /*tabla*/
 
@@ -399,6 +430,24 @@ tr:hover {background-color:#ffffff;}
     column-gap: 5rem;
 }
 
+.formulario__entrada--med{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+
+
+}
+
+.medico{
+    font-size: 2rem;
+}
+
+.campo__field-med{
+    height: 3.5rem;
+    font-size: 1.5rem;
+}
+
 .campo__field--textarea{
     height: 20rem;
 }
@@ -460,5 +509,4 @@ tr:hover {background-color:#ffffff;}
     justify-content: center;
     gap: 2rem;
     
-  
 }

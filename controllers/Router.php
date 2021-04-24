@@ -41,14 +41,14 @@ class Router {
 
 				case 'medicina':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('medicina');
-					else if( $_POST['r'] == 'user-add' )  $controller->load_view('user-add');
+					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medicina-add');
 					else if( $_POST['r'] == 'user-edit' )  $controller->load_view('user-edit');
 					else if( $_POST['r'] == 'user-delete' )  $controller->load_view('user-delete');
 					break;
 
-				case 'status':
-					if( !isset( $_POST['r'] ) )  $controller->load_view('status');
-					else if( $_POST['r'] == 'status-add' )  $controller->load_view('status-add');
+				case 'topico':
+					if( !isset( $_POST['r'] ) )  $controller->load_view('topico');
+					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico-add');
 					else if( $_POST['r'] == 'status-edit' )  $controller->load_view('status-edit');
 					else if( $_POST['r'] == 'status-delete' )  $controller->load_view('status-delete');
 					break;

@@ -8,13 +8,14 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-  //  $this->Image('logo.png',10,8,33);
+    $this->Image('C:\wamp64\www\Proyectos\DBU\public\img\encabezado.png',55,8,100,20);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
     $this->Cell(60);
     // Título
-    $this->Cell(80,10,utf8_decode('Reporte Psicológico'),0,0,'C');
+    $this->Cell(80,55,utf8_decode('Reporte Psicológico'),0,0,'C');
+    $this->Cell(1,10,utf8_decode(''),0,1,'C');
     // Salto de línea
     $this->Ln(20);
 }
@@ -45,13 +46,15 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',11);
 
 $pdf->Cell(22,10,utf8_decode('Paciente:'),0,0,'L',0);
-$pdf->Cell(40,10,utf8_decode($psi[0]['Paciente']),0,1,'L',0);
+$pdf->Cell(40,10,utf8_decode($psi[0]['Paciente']),0,0,'L',0);
+
+$pdf->Cell(90,10,utf8_decode('Fecha:'),0,0,'R',0);
+$pdf->Cell(30,10,utf8_decode($psi[0]['fecha']),0,1,'R',0);
 
 $pdf->Cell(22,10,utf8_decode('Estado:'),0,0,'L',0);
 $pdf->Cell(40,10,utf8_decode($psi[0]['estado_psi']),0,0,'L',0);
 
-$pdf->Cell(90,10,utf8_decode('Fecha:'),0,0,'R',0);
-$pdf->Cell(30,10,utf8_decode($psi[0]['fecha']),0,1,'R',0);
+
 
 $pdf->Cell(40,10,utf8_decode($psi[0]['diagnostico']),0,1,'C',0);
 $pdf->Cell(40,10,utf8_decode($psi[0]['tratamiento'],),0,1,'C',0);
