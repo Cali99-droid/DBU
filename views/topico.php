@@ -89,11 +89,14 @@ if( empty($topico) ) {
 								<input type="hidden" name="idpsicologia" value="' . $topico[$n]['idtopico'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>
+
+							
 							<form method="POST">
-								<input type="hidden" name="r" value="psicologia-report">
-								<input type="hidden" name="idpsicologia" value="' . $topico[$n]['idtopico'] . '">
-								<input class="" type="submit" value="Reporte">
+								<input type="hidden" name="r" value="topico-report">
+								<input type="hidden" name="idtopico" value="' . $topico[$n]['idtopico'] . '">
+								<input class="boton--reporte" type="submit" value="">
 							</form>
+							
 						</td>
 					</tr>
 			'; 

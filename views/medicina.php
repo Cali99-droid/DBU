@@ -84,6 +84,12 @@ if( empty($medicina) ) {
 								<input type="hidden" name="idmedico" value="' . $medicina[$n]['idmedico'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>
+
+							<form method="POST">
+								<input type="hidden" name="r" value="medico-report">
+								<input type="hidden" name="idmedico" value="' . $medicina[$n]['idmedico'] . '">
+								<input class="boton--reporte" type="submit" value="">
+							</form>
 						</td>
 					</tr>
 			'; 

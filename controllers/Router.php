@@ -36,21 +36,21 @@ class Router {
 					else if( $_POST['r'] == 'psicologia-add' )  $controller->load_view('psicologia-add');
 					else if( $_POST['r'] == 'psicologia-edit' )  $controller->load_view('psicologia-edit');
 					else if( $_POST['r'] == 'psicologia-delete' )  $controller->load_view('psicologia-delete');
-					else if( $_POST['r'] == 'psicologia-report' )  $controller->load_login('reporte-psi');
+					else if( $_POST['r'] == 'psicologia-report' )  $controller->load_login('psicologia-report');
 					break;
 
 				case 'medicina':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('medicina');
 					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medicina-add');
 					else if( $_POST['r'] == 'user-edit' )  $controller->load_view('user-edit');
-					else if( $_POST['r'] == 'user-delete' )  $controller->load_view('user-delete');
+					else if( $_POST['r'] == 'medico-report' )  $controller->load_login('medico-report');
 					break;
 
 				case 'topico':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('topico');
 					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico-add');
 					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('historial-add');
-					else if( $_POST['r'] == 'status-delete' )  $controller->load_view('status-delete');
+					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico-report');
 					break;
 
 				case 'salir':

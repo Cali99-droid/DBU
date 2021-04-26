@@ -5,7 +5,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset
 
 	$psi = $psi_controller->get($_POST['idpsicologia']);
     $dni = $_POST['dni_per'];
-
+    $fecha =  date("Y-m-d");
 	if( empty($psi) ) {
 		$template = '
 			<div class="container">
@@ -97,7 +97,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset
             $dni,
 			$psi[0]['estado_psi'],
 			$psi[0]['descripcion_psi'],
-			$psi[0]['fecha'],
+			$fecha,
 			$psi[0]['diagnostico'],
 			$psi[0]['tratamiento'],
             $psi[0]['idpsicologia'],
