@@ -37,7 +37,7 @@ if( empty($psicologia) ) {
 						<th>Paciente</th>
 						<th>Estado del Paciente</th>
 						<th>Descripcion</th>
-						<th>Fecha</th>
+						<th class="fondo_chico">Fecha</th>
 						<th>Estado</th>
 						<th class="act">Acciones</th>
 						<th>
@@ -66,7 +66,7 @@ if( empty($psicologia) ) {
 						<td>' .  $psicologia[$n]['Paciente'] . '</td>
 						<td>' .  $psicologia[$n]['estado_psi'] . '</td>
 						<td>' .  $psicologia[$n]['descripcion_psi'] . '</td>
-						<td>' .  $psicologia[$n]['fecha'] . '</td>
+						<td >' .  $psicologia[$n]['fecha'] . '</td>
 						<td class="center"><span class=" label '.$estadoT.'">' .  $psicologia[$n]['estado_atencion'] . '</span></td>  
 
 					
@@ -86,7 +86,7 @@ if( empty($psicologia) ) {
 							<form method="POST">
 								<input type="hidden" name="r" value="psicologia-report">
 								<input type="hidden" name="idpsicologia" value="' . $psicologia[$n]['idpsicologia'] . '">
-								<input class="" type="submit" value="Reporte">
+								<input class="boton--reporte" type="submit" value="">
 							</form>
 						</td>
 					</tr>
