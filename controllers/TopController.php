@@ -15,12 +15,24 @@ class TopController {
 		return $this->model->get($topico_id);
 	}
 
+	public function getEscuelas( $escuela_id = '' ) {
+		return $this->model->getEscuelas($escuela_id);
+	}
+
 	public function del( $topico_id = '' ) {
 		return $this->model->del($topico_id);
 	}
 
 	public function update( $topico_data = array() ) {
 		return $this->model->update($topico_data);
+	}
+
+	public function setNuevoHistorial( $topico_data = array() ) {
+		return $this->model->setNuevoHistorial($topico_data);
+	}
+
+	public function setNuevoExamen( $topico_data = array() ) {
+		return $this->model->setNuevoExamen($topico_data);
 	}
 
 

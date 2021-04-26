@@ -26,7 +26,7 @@ if( empty($topico) ) {
 			</div> 
             
             <form method="POST">
-				<input type="hidden" name="r" value="topico-add-hist">
+				<input type="hidden" name="r" value="historial-add">
 				<input class="boton boton--nuevo" type="submit" value="Aperturar Historial">
 			</form>
 		</div>
@@ -42,6 +42,7 @@ if( empty($topico) ) {
 						<th>Peso</th>
                         <th>Talla</th>
 						<th>Fecha</th>
+						<th>Estado</th>
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
@@ -55,6 +56,14 @@ if( empty($topico) ) {
 					<tbody>';
 
 			for ($n=0; $n < count($topico); $n++) { 
+				$estado =  $topico[$n]['estado_atencion'];
+				$estadoT = 'completado';
+
+				if($estado == 'Completado'){
+                   $estadoT = 'completado';
+				}else{
+					$estadoT = 'pendiente';
+				}
 				$template_topico .= '
 					<tr>
 					    
@@ -64,6 +73,7 @@ if( empty($topico) ) {
 						<td>' .  $topico[$n]['peso_pas'] . '</td>
 						<td>' .  $topico[$n]['talla_pas'] . '</td> 
                         <td>' .  $topico[$n]['fecha'] . '</td> 
+						<td class="center"><span class=" label '.$estadoT.'">' .  $topico[$n]['estado_atencion'] . '</span></td> 
 
 					
 						<td  class="action">

@@ -49,7 +49,7 @@ class Router {
 				case 'topico':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('topico');
 					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico-add');
-					else if( $_POST['r'] == 'status-edit' )  $controller->load_view('status-edit');
+					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('historial-add');
 					else if( $_POST['r'] == 'status-delete' )  $controller->load_view('status-delete');
 					break;
 

@@ -34,10 +34,13 @@ if( empty($medicina) ) {
 					<thead>
 					<tr>
 						<th>Id</th>
+						<th>Paciente</th>
 						<th>Diagnostico</th>
 						<th>Tratamiento</th>
 						<th>Fecha</th>
-						<th>idpaciente</th>
+						<th>Estado</th>
+						
+						
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
@@ -51,13 +54,22 @@ if( empty($medicina) ) {
 					<tbody>';
 
 			for ($n=0; $n < count($medicina); $n++) { 
+				$estado =  $medicina[$n]['estado_atencion'];
+				$estadoT = 'completado';
+				if($estado == 'Completado'){
+					$estadoT = 'completado';
+				 }else{
+					 $estadoT = 'pendiente';
+				 }
 				$template_medicina .= '
 					<tr>
 						<td>' . $medicina[$n]['idmedico'] . '</td>
+						<td>' .  $medicina[$n]['Paciente'] . '</td>
 						<td>' .  $medicina[$n]['diagnostico'] . '</td>
 						<td>' .  $medicina[$n]['tratamiento'] . '</td>
 						<td>' .  $medicina[$n]['fecha'] . '</td> 
-						<td>' .  $medicina[$n]['idpaciente'] . '</td>
+						<td class="center"><span class=" label '.$estadoT.'">' .  $medicina[$n]['estado_atencion'] . '</span></td>
+						
 
 					
 						<td  class="action">

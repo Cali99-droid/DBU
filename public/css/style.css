@@ -393,8 +393,24 @@ body{
   text-transform: uppercase;
 }
 
+.completado{
+    background-color: #4CAF50;
 
+}
 
+.pendiente {background-color: #ff9800;}
+
+.center{
+    text-align: center;
+}
+
+.label {
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    max-width: 95%;
+    font-size: 1.3rem;
+  }
 .action{
     display: flex;
     justify-content: center;

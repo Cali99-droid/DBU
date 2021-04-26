@@ -35,9 +35,10 @@ if( empty($psicologia) ) {
 					<tr>
 						<th>Id</th>
 						<th>Paciente</th>
-						<th>Estado</th>
+						<th>Estado del Paciente</th>
 						<th>Descripcion</th>
 						<th>Fecha</th>
+						<th>Estado</th>
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
@@ -51,6 +52,13 @@ if( empty($psicologia) ) {
 					<tbody>';
 
 			for ($n=0; $n < count($psicologia); $n++) { 
+				$estado =  $psicologia[$n]['estado_atencion'];
+				$estadoT = 'completado';
+				if($estado == 'Completado'){
+					$estadoT = 'completado';
+				 }else{
+					 $estadoT = 'pendiente';
+				 }
 				$template_psicologia .= '
 					<tr>
 					    
@@ -58,7 +66,8 @@ if( empty($psicologia) ) {
 						<td>' .  $psicologia[$n]['Paciente'] . '</td>
 						<td>' .  $psicologia[$n]['estado_psi'] . '</td>
 						<td>' .  $psicologia[$n]['descripcion_psi'] . '</td>
-						<td>' .  $psicologia[$n]['fecha'] . '</td> 
+						<td>' .  $psicologia[$n]['fecha'] . '</td>
+						<td class="center"><span class=" label '.$estadoT.'">' .  $psicologia[$n]['estado_atencion'] . '</span></td>  
 
 					
 						<td  class="action">

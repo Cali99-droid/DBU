@@ -23,6 +23,12 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST
                 <label for="codigo" class="campo__label">DNI</label>
                 <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" required>
                 </div>
+
+                <div class="campo">
+                <label for="fecha" class="campo__label">Fecha</label>
+                <input  type="text" class="campo__field" name="fecha"  value="%s"></input>
+                </div>
+                
                 <div class="campo">
                 <label for="tipo_sangre" class="campo__label">Tipo de Sangre</label>
                   <select  class="campo__field--select" name="tipo_sangre"  placeholder="Tipo de Sangre" required>
@@ -35,6 +41,17 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST
                     <option value="B-">B-</option>
                     <option value="AB-">AB-</option>
                     <option value="O-">O-</option>
+                 
+                  </select>
+                </div>
+
+                
+                <div class="campo">
+                <label for="tipo_consulta" class="campo__label">Tipo de Consulta</label>
+                  <select  class="campo__field--select" name="tipo_consulta"  placeholder="Tipo de Sangre" required>
+                    <option value="">SELECCIONE</option>
+                    <option value="examen">Examen</option>
+                    <option value="consulta">Consulta</option>
                  
                   </select>
                 </div>
@@ -55,10 +72,8 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST
                     <textarea name="obser_top"  class="campo__field--textarea campo__field"></textarea>
                 </div>
 
-                <div class="campo">
-                <label for="fecha" class="campo__label">Fecha</label>
-                <input  type="text" class="campo__field" name="fecha"  value="%s"></input>
-                </div>
+                
+
 
                 <div class="campo guardar_psi">
                     <input type="submit" value="Guardar" class="boton boton--guardar ">
@@ -89,8 +104,14 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST
 	
 	);
 
-	$top = $top_controller->set($new_top);
-    $mensaje = 'INSERTADO CON ÉXITO';
+    if($_POST['tipo_consulta'] == 'examen'){
+        $top = $top_controller->setNuevoExamen($new_top);
+        $mensaje = 'EL PACIENTE TIENE PENDIENTE EL EXAMEN MÉDICO, PSICOLÓGICO Y ODONTOLÓGICO';
+    }else{
+        $top = $top_controller->set($new_top);
+        $mensaje = 'INSERTADO CON ÉXITO';
+    }
+    
     
     if($top[0] == $mensaje ){
        

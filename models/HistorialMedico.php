@@ -21,8 +21,8 @@ class HistorialMedico extends Model {
 
 	public function get( $idmedico = '' ) {
 		$this->query = ($idmedico != '')
-			?"SELECT * FROM medicos WHERE idmedico = $idmedico"
-			:"SELECT * FROM medicos";
+			?"SELECT * FROM Vista_PacienteMedico WHERE idmedico = $idmedico"
+			:"SELECT * FROM Vista_PacienteMedico";
 		
 		$this->get_query();
 
