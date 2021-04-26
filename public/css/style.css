@@ -2,6 +2,7 @@
 
 :root{
     --primario: rgb(37,71,106);
+    --primarioa: rgb(32, 255, 244);
 }
 html{
     box-sizing: border-box;
@@ -407,9 +408,9 @@ body{
 .label {
     border-radius: 5px;
     color: white;
-    padding: 8px;
+    padding: 6px;
     max-width: 95%;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 .action{
     display: flex;
@@ -422,10 +423,10 @@ tr:hover {background-color:#ffffff;}
     text-align: center;
 }
 
-.boton--editar, .boton--eliminar{
+.boton--editar, .boton--eliminar, .boton--reporte{
     height: 2rem;
     width: 3rem;
-    background-image: url('../img/escritura.svg');
+    background-image: url('../img/bx-edit.svg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: 2rem;
@@ -436,6 +437,15 @@ tr:hover {background-color:#ffffff;}
 
 .boton--eliminar{
     background-image: url('../img/trash.svg');
+}
+
+.boton--reporte{
+    background-image: url('../img/doc.svg');
+}
+
+.fondo_chico{
+    width: 12rem;
+    
 }
 
 
