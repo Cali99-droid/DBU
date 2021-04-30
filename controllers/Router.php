@@ -42,7 +42,8 @@ class Router {
 				case 'medicina':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('medicina');
 					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medicina-add');
-					else if( $_POST['r'] == 'user-edit' )  $controller->load_view('user-edit');
+					else if( $_POST['r'] == 'medicina-edit' )  $controller->load_view('medicina-edit');
+					else if( $_POST['r'] == 'medicina-delete' )  $controller->load_view('medicina-delete');
 					else if( $_POST['r'] == 'medico-report' )  $controller->load_login('medico-report');
 					break;
 

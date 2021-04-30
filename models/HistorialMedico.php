@@ -7,8 +7,10 @@ class HistorialMedico extends Model {
 			$$key = $value;
 		}
 
-		$this->query = "CALL INSERTAR_MEDICO('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
-		'$diagnostico','$tratamiento')";
+		$this->query = "CALL INSERTAR_MEDICO('', '',  '','$ant_medicos',
+		'$ant_quirurgicos', '', '$hozpitalizaciones',
+		'$habitos_nocivos', '$otros', '$tipo_enfermedad',
+		'$forma_inicio','$sintomas','$fecha', '$codigo','$diagnostico','$tratamiento')";
 /*
 		$this->query = "REPLACE INTO psicologicos SET idpsicologia = '$idpsicologia', estado_psi = '$estado_psi',
 		descripcion_psi='$descripcion_psi', fecha='$fecha', idpaciente = '$idpaciente', diagnostico='$diagnostico',
@@ -47,8 +49,11 @@ class HistorialMedico extends Model {
 			$$key = $value;
 		}
 
-		$this->query = "CALL ACTUALIZAR_MEDICOS('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
-		'$diagnostico','$tratamiento', '$idpsicologia')";
+		$this->query = "CALL ACTUALIZAR_MEDICO('', '',  '','$ant_medicos',
+		'$ant_quirurgicos', '', '$hozpitalizaciones',
+		'$habitos_nocivos', '$otros', '$tipo_enfermedad',
+		'$forma_inicio','$sintomas','$fecha', '$codigo','$diagnostico','$tratamiento',
+		'$idmedico')";
         $row = $this->set_query();
 		
 		return $row;

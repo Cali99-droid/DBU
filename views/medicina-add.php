@@ -93,7 +93,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
                     <input  type="date" class="campo__field-med" name="fecha"  value="%s"></input>
                     <div class="campo guardar_psi">
                     <input type="submit" value="Guardar" class="boton boton--guardar ">
-                    <input type="hidden" name="r" value="psicologia-add">
+                    <input type="hidden" name="r" value="medicina-add">
 				    <input type="hidden" name="crud" value="set">
                 </div>
                </div>
@@ -107,13 +107,19 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
 	', $fecha);	
 
 } else if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && $_POST['crud'] == 'set' ) {
-    $psi_controller = new PsiController();
+    $med_controller = new MedController();
     $indice = 0;
     
-	$new_psi = array(
-		'idpsicologia' =>  $indice,
-		'estado_psi' =>  $_POST['estado_psi'], 
-		'descripcion_psi' =>  $_POST['descripcion_psi'], 
+	$new_med = array(
+		'idmedico' =>  $indice,
+		'ant_medicos' =>  $_POST['ant_medicos'], 
+		'ant_quirurgicos' =>  $_POST['ant_quirurgicos'], 
+        'hozpitalizaciones' =>  $_POST['hozpitalizaciones'], 
+        'habitos_nocivos' =>  $_POST['habitos_nocivos'], 
+        'otros' =>  $_POST['otros'], 
+        'tipo_enfermedad' =>  $_POST['tipo_enfermedad'], 
+        'forma_inicio' =>  $_POST['forma_inicio'], 
+        'sintomas' =>  $_POST['sintomas'], 
 		'fecha' =>  $_POST['fecha'],
 		'codigo' =>  $_POST['codigo'],  /* TODO */
 		'diagnostico' =>  $_POST['diagnostico'],
@@ -121,9 +127,9 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
 	
 	);
 
-	$psi = $psi_controller->set($new_psi);
+	$med = $med_controller->set($new_psi);
     $mensaje = 'INSERTADO CON ÉXITO';
-    if($psi[0] == $mensaje ){
+    if($med[0] == $mensaje ){
         $template = '
 		<div class="container">
 			<p class="exito">%s</p>
@@ -135,7 +141,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
             }, 3000)
         }
         window.onload = function () {
-            reloadPage("psicologia")
+            reloadPage("medicina")
         }
         </script>
         
@@ -153,7 +159,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
             }, 2000)
         }
         window.onload = function () {
-            reloadPage("psicologia")
+            reloadPage("medicina")
         }
         </script>
         
@@ -161,7 +167,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
     }
 	
 
-        printf($template,  $psi[0]);
+        printf($template,  $med[0]);
     
 	
 } else {
