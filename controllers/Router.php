@@ -41,10 +41,10 @@ class Router {
 
 				case 'medicina':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('medicina');
-					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medicina-add');
-					else if( $_POST['r'] == 'medicina-edit' )  $controller->load_view('medicina-edit');
-					else if( $_POST['r'] == 'medicina-delete' )  $controller->load_view('medicina-delete');
-					else if( $_POST['r'] == 'medico-report' )  $controller->load_login('medico-report');
+					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medico/medicina-add');
+					else if( $_POST['r'] == 'medicina-edit' )  $controller->load_view('medico/medicina-edit');
+					else if( $_POST['r'] == 'medicina-delete' )  $controller->load_view('medico/medicina-delete');
+					else if( $_POST['r'] == 'medico-report' )  $controller->load_login('medico/medico-report');
 					break;
 
 				case 'topico':

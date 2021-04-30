@@ -1,7 +1,7 @@
 <?php 
-$psi_controller = new PsiController();
+$med_controller = new MedController();
 
-if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'medico' && !isset($_POST['crud']) ) {
+if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'Medico' && !isset($_POST['crud']) ) {
 
 	$med = $med_controller->get($_POST['idmedico']);
     $dni = $_POST['dni_per'];
@@ -39,7 +39,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'medico' && !isset($_PO
         <div class="gestion__cuerpo--med">
             <div class="dni__med">
                 <label for="codigo" class="campo__label medico">DNI</label>
-                <input  class="campo__field-med num" type="number" value="%s"  placeholder="DNI " name="codigo" required>
+                <input  class="campo__field num" type="number" value="%s"  placeholder="DNI " name="codigo" required>
             </div>
             <form method="POST" class="formulario__entrada--med">
               
@@ -68,7 +68,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'medico' && !isset($_PO
 
                 <div class="campo">
                     <label for="otros" class="campo__label medico">Otros</label>
-                    <input name="otros"  class=" value="%s"  campo__field-med"></input>
+                    <input name="otros"  class=" campo__field-med"  value="%s" ></input>
                 </div>
 
                 </fieldset>
@@ -134,26 +134,24 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'medico' && !isset($_PO
 
 		printf(
 			$template_psi,
-		
             $dni,
 			$med[0]['ant_medicos'],
 			$med[0]['ant_quirurgicos'],
-			$med[0]['fecha'],
-			$med[0]['hozpitalizaciones'],
-			$med[0]['habitos_nocivos'],
+            $med[0]['hozpitalizaciones'],
+            $med[0]['habitos_nocivos'],		
             $med[0]['otros'],
             $med[0]['tipo_enfermedad'],
             $med[0]['forma_inicio'],
             $med[0]['sintomas'],
             $med[0]['diagnostico'],
             $med[0]['tratamiento'],
-            $med[0]['tipo_enfermedad'],
+            $med[0]['fecha'],
             $med[0]['idmedico'],
             $med[0]['idmedico']
 		);	
 	}
 
-} else if( $_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'medico'&& $_POST['crud'] == 'set' ) {	
+} else if( $_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'Medico'&& $_POST['crud'] == 'set' ) {	
 
 	$save_med = array(
 

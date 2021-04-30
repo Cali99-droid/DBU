@@ -76,6 +76,7 @@ if( empty($medicina) ) {
 							<form method="POST">
 								<input type="hidden" name="r" value="medicina-edit">
 								<input type="hidden" name="idmedico" value="' .$medicina[$n]['idmedico'] . '">
+								<input type="hidden" name="dni_per" value="' .$medicina[$n]['dni_per'] . '">
 								<input class="boton--editar" type="submit" value="">
 							</form>
 					

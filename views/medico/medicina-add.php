@@ -19,7 +19,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
         <div class="gestion__cuerpo--med">
             <div class="dni__med">
                 <label for="codigo" class="campo__label medico">DNI</label>
-                <input  class="campo__field-med num" type="number" placeholder="DNI " name="codigo" required>
+                <input  class="campo__field " type="number" placeholder="DNI " name="codigo" required>
             </div>
             <form method="POST" class="formulario__entrada--med">
               
