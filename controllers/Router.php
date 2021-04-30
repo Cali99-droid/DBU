@@ -32,15 +32,15 @@ class Router {
 					break;
 
 				case 'psicologia':
-					if( !isset( $_POST['r'] ) )  $controller->load_view('psicologia');
-					else if( $_POST['r'] == 'psicologia-add' )  $controller->load_view('psicologia-add');
-					else if( $_POST['r'] == 'psicologia-edit' )  $controller->load_view('psicologia-edit');
-					else if( $_POST['r'] == 'psicologia-delete' )  $controller->load_view('psicologia-delete');
-					else if( $_POST['r'] == 'psicologia-report' )  $controller->load_login('psicologia-report');
+					if( !isset( $_POST['r'] ) )  $controller->load_view('psicologia/psicologia');
+					else if( $_POST['r'] == 'psicologia-add' )  $controller->load_view('psicologia/psicologia-add');
+					else if( $_POST['r'] == 'psicologia-edit' )  $controller->load_view('psicologia/psicologia-edit');
+					else if( $_POST['r'] == 'psicologia-delete' )  $controller->load_view('psicologia/psicologia-delete');
+					else if( $_POST['r'] == 'psicologia-report' )  $controller->load_login('psicologia/psicologia-report');
 					break;
 
 				case 'medicina':
-					if( !isset( $_POST['r'] ) )  $controller->load_view('medicina');
+					if( !isset( $_POST['r'] ) )  $controller->load_view('medico/medicina');
 					else if( $_POST['r'] == 'medicina-add' )  $controller->load_view('medico/medicina-add');
 					else if( $_POST['r'] == 'medicina-edit' )  $controller->load_view('medico/medicina-edit');
 					else if( $_POST['r'] == 'medicina-delete' )  $controller->load_view('medico/medicina-delete');
@@ -48,10 +48,10 @@ class Router {
 					break;
 
 				case 'topico':
-					if( !isset( $_POST['r'] ) )  $controller->load_view('topico');
-					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico-add');
-					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('historial-add');
-					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico-report');
+					if( !isset( $_POST['r'] ) )  $controller->load_view('topico/topico');
+					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico/topico-add');
+					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('topico/historial-add');
+					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico/topico-report');
 					break;
 
 				case 'salir':
