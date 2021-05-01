@@ -48,8 +48,10 @@ class HistorialTopico extends Model {
 			$$key = $value;
 		}
 
-		$this->query = "CALL ACTUALIZAR_PSICOLOGIA('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
-		'$diagnostico','$tratamiento', '$idpsicologia')";
+		$this->query = "CALL ACTUALIZAR_TOPICO('$codigo','$tipo_sangre',
+		 '$pa_pas', '$pl_pas', 
+		'$fc_pas', '$peso_pas', '$talla_pas', 
+		 '$obser_top','$fecha','$idtopico')";
         $row = $this->set_query();
 		
 		return $row;

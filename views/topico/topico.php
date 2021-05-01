@@ -78,15 +78,15 @@ if( empty($topico) ) {
 					
 						<td  class="action">
 							<form method="POST">
-								<input type="hidden" name="r" value="psicologia-edit">
+								<input type="hidden" name="r" value="topico-edit">
 								<input type="hidden" name="idtopico" value="' .$topico[$n]['idtopico'] . '">
 								<input type="hidden" name="dni_per" value="' .$topico[$n]['dni_per'] . '">
 								<input class="boton--editar" type="submit" value="">
 							</form>
 					
 							<form method="POST">
-								<input type="hidden" name="r" value="psicologia-delete">
-								<input type="hidden" name="idpsicologia" value="' . $topico[$n]['idtopico'] . '">
+								<input type="hidden" name="r" value="topico-delete">
+								<input type="hidden" name="idtopico" value="' . $topico[$n]['idtopico'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>
 
