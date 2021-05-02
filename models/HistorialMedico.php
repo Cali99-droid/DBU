@@ -1,7 +1,8 @@
 <?php 
 require_once("Model.php");
 class HistorialMedico extends Model {
-
+	//Función que permite la inserción de datos desde el modelo a la vista de historial médico
+	//Parámetros: Conjunto de datos médicos específicos
 	public function set( $medico_data = array() ) {
 		foreach ($medico_data as $key => $value) {
 			$$key = $value;
@@ -20,7 +21,8 @@ class HistorialMedico extends Model {
 		
 		return $row;
 	}
-
+	//Función que permite la ontención de datos desde la vista al modelo de historial médico
+	//Parámetros: ID del histoial médico
 	public function get( $idmedico = '' ) {
 		$this->query = ($idmedico != '')
 			?"SELECT * FROM Vista_PacienteMedico WHERE idmedico = $idmedico"
@@ -38,12 +40,14 @@ class HistorialMedico extends Model {
 
 		return $data;
 	}
-
+	//Función que permite la eliminación de un historial médico
+	//Parámetros: ID del histoial médico
 	public function del( $idmedico = '' ) {
 		$this->query = "DELETE FROM  medicos WHERE idmedico = $idmedico";
 		$this->del_query();
 	}
-
+	//Función que permite la actualización de un historial médico
+	//Parámetros: Conjunto de datos médicos específicos
 	public function update( $medico_data = array() ) {
 		foreach ($medico_data as $key => $value) {
 			$$key = $value;
