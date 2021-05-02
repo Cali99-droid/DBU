@@ -1,7 +1,8 @@
 <?php 
 require_once("Model.php");
 class HistorialPsicologico extends Model {
-
+	//Función que permite la inserción de datos desde el modelo a la vista de historial psicológico
+	//Parámetros: Conjunto de datos psicológicos específicos
 	public function set( $psicologico_data = array() ) {
 		foreach ($psicologico_data as $key => $value) {
 			$$key = $value;
@@ -18,7 +19,9 @@ class HistorialPsicologico extends Model {
 		
 		return $row;
 	}
-
+	
+	//Función que permite la obtención de datos desde la vista al modelo de historial psicológico
+	//Parámetros: ID del historial psicológico
 	public function get( $idpsicologia = '' ) {
 		$this->query = ($idpsicologia != '')
 			?"SELECT * FROM Vista_PacientePsicologico WHERE idpsicologia = $idpsicologia"
@@ -36,12 +39,14 @@ class HistorialPsicologico extends Model {
 
 		return $data;
 	}
-
+	//Función que permite la eliminación de un historial psicológico
+	//Parámetros: ID del historial psicológico
 	public function del( $idpsicologia = '' ) {
 		$this->query = "DELETE FROM  psicologicos WHERE idpsicologia = $idpsicologia";
 		$this->del_query();
 	}
-
+	//Función que permite la actualización de un historial psicológico
+	//Parámetros: Conjunto de datos psicológicos específicos
 	public function update( $psicologico_data = array() ) {
 		foreach ($psicologico_data as $key => $value) {
 			$$key = $value;
