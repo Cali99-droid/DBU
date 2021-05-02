@@ -60,7 +60,7 @@ class Router {
 					else if( $_POST['r'] == 'odontologia-add' )  $controller->load_view('odontologia/odontologia-add');
 					else if( $_POST['r'] == 'odontologia-edit' )  $controller->load_view('odontologia/odontologia-edit');
 					else if( $_POST['r'] == 'odontologia-delete' )  $controller->load_view('odontologia/odontologia-delete');
-					else if( $_POST['	r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
+					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
 					break;
 
 				case 'salir':
