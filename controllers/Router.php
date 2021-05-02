@@ -55,6 +55,14 @@ class Router {
 					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico/topico-report');
 					break;
 
+				case 'odontologia':
+					if( !isset( $_POST['r'] ) )  $controller->load_view('odontologia/odontologia');
+					else if( $_POST['r'] == 'odontologia-add' )  $controller->load_view('odontologia/odontologia-add');
+					else if( $_POST['r'] == 'odontologia-edit' )  $controller->load_view('odontologia/odontologia-edit');
+					else if( $_POST['r'] == 'odontologia-delete' )  $controller->load_view('odontologia/odontologia-delete');
+					else if( $_POST['	r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
+					break;
+
 				case 'salir':
 					$user_session = new SessionController();
 					$user_session->logout();
