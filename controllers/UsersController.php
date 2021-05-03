@@ -11,8 +11,14 @@ class UsersController {
 	public function set( $user_data = array() ) {
 		return $this->model->set($user_data);
 	}
-	//Función que permite obtener datos de un usuario desde la vista al modelo
-	//Parámetros: ID de usuario
+
+
+
+	public function asignarCuenta( $user_data = array() ) {
+		return $this->model->asignarCuenta($user_data);
+	}
+
+
 	public function get( $user_id = '' ) {
 		return $this->model->get($user_id);
 	}

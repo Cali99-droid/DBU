@@ -144,8 +144,14 @@ body{
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
     }
+
+    .gestion__cuerpo--admin{
+        margin-top: 0;
+    }
         
 }
+
+
 
 .gestion__grafico{
     grid-column: 1 / 4;
@@ -164,10 +170,14 @@ body{
    color: rgb(37,71,106);
 }
 
+.card--admin{
+    margin-top: 3rem;
+    color: #fff;
+ }
+
 .card__img--perfil{
     height: 10rem;
     max-width: 100%;
-
 }
 
 .card{
@@ -180,6 +190,13 @@ body{
     border-radius: 10px;
     color:#fff;
 }
+
+.card--admin{
+    background-color: #fff;
+    color:var(--primario);
+    font-weight: bold ;
+    height: auto;
+ }
 .p_rol{
     font-size: 1.5rem;
     text-transform: uppercase;
