@@ -1,6 +1,6 @@
 <?php 
 class Autoload
-{
+{	//Función que permite inicializar los modelos y controladores
 	public function __construct()
 	{
 		//http://php.net/manual/es/function.spl-autoload-register.php
