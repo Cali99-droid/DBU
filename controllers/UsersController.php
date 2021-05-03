@@ -10,6 +10,10 @@ class UsersController {
 		return $this->model->set($user_data);
 	}
 
+	public function asignarCuenta( $user_data = array() ) {
+		return $this->model->asignarCuenta($user_data);
+	}
+
 	public function get( $user_id = '' ) {
 		return $this->model->get($user_id);
 	}

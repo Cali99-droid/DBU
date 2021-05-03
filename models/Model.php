@@ -39,7 +39,6 @@ abstract class Model {
 	protected function del_query() {
 		$this->db_open();
 		$result = $this->conn->query($this->query);
-
 		$this->db_close();
 
 	}

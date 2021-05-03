@@ -6,15 +6,18 @@ class UsersModel extends Model {
 			$$key = $value;
 		}
 
-		$this->query = "REPLACE INTO cuentas (user, pass, idpersona, idrol) 
-        VALUES ('$user', '$pass', '$idpersona', '$idrol')";
-		$this->set_query();
+		$this->query = "CALL CREAR_CUENTA('$nom_per', '$ape_pat','$ape_mat_per',
+		'$codigo', '$sexo_per', '$celular', '$fech_nac', '$cod', '$escuela',
+		'$user', '$pass', '$rol')";
+	    $row = $this->set_query();
+		
+		return $row;
 	}
 
 	public function get( $user = '' ) {
 		$this->query = ($user != '')
-			?"SELECT * FROM cuentas WHERE user = '$user'"
-			:"SELECT * FROM cuentas";
+			?"SELECT * FROM Vista_CUENTAS WHERE user = '$user'"
+			:"SELECT * FROM Vista_CUENTAS";
 		
 		$this->get_query();
 
@@ -31,7 +34,7 @@ class UsersModel extends Model {
 
 	public function del( $user = '' ) {
 		$this->query = "DELETE FROM cuentas WHERE user = '$user'";
-		$this->set_query();
+		$this->del_query();
 	}
 
 	public function validate_user($user, $pass) {
@@ -48,6 +51,19 @@ class UsersModel extends Model {
 		}
 
 		return $data;
+	}
+
+
+	public function asignarCuenta( $user_data = array() ) {
+		foreach ($user_data as $key => $value) {
+			$$key = $value;
+		}
+
+		$this->query = "CALL ASIGNAR_CUENTA('$codigo', '$rol', '$user', 
+		'$pass')";
+	    $row = $this->set_query();
+		
+		return $row;
 	}
 
 
