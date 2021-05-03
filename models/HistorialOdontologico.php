@@ -1,7 +1,8 @@
 <?php 
 require_once("Model.php");
 class HistorialOdontologico extends Model {
-
+	//Función que permite la inserción de datos desde el modelo a la vista de historial odontológico
+	//Parámetros: Conjunto de datos odontológicos específicos
 	public function set( $odontologia_data = array() ) {
 		foreach ($odontologia_data as $key => $value) {
 			$$key = $value;
@@ -20,7 +21,8 @@ class HistorialOdontologico extends Model {
 		
 		return $row;
 	}
-
+	//Función que permite la obtención de datos desde la vista al modelo de historial odontológico
+	//Parámetros: ID del historial odontológico
 	public function get( $idodontologo = '' ) {
 		$this->query = ($idodontologo != '')
 			?"SELECT * FROM Vista_PacienteOdontologico WHERE idodontologo = $idodontologo"
@@ -38,12 +40,14 @@ class HistorialOdontologico extends Model {
 
 		return $data;
 	}
-
+	//Función que permite la eliminación de un historial odontológico
+	//Parámetros: ID del historial odontológico
 	public function del( $idodontologia = '' ) {
 		$this->query = "CALL ELIMINAR_ODONTOLOGIA('$idodontologia')";
 		$this->del_query();
 	}
-
+	//Función que permite la actualización de un historial odontológico
+	//Parámetros: Conjunto de datos psicológicos odontológico
 	public function update( $odontologico_data = array() ) {
 		foreach ($odontologico_data as $key => $value) {
 			$$key = $value;
