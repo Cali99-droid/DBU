@@ -1,6 +1,9 @@
 <?php //TOD00000
 require_once("Model.php");
 class HistorialTopico extends Model {
+	
+	//Función que permite la inserción de datos desde el modelo a la vista de historial tópico
+	//Parámetros: Conjunto de datos específicos del área de tópico 
 
 	public function set( $topico_data = array() ) {
 		foreach ($topico_data as $key => $value) {
@@ -19,7 +22,8 @@ class HistorialTopico extends Model {
 		
 		return $row;
 	}
-
+	//Función que permite la obtención de datos desde la vista al modelo de historial tópico
+	//Parámetros: ID del historial tópico
 	public function get( $idtopico = '' ) {
 		$this->query = ($idtopico != '')
 			?"SELECT * FROM vista_PacienteTopico WHERE idtopico = $idtopico"
@@ -37,12 +41,14 @@ class HistorialTopico extends Model {
 
 		return $data;
 	}
-
+	//Función que permite la eliminación de historial tópico
+	//Parámetros: ID del historial tópico
 	public function del( $idtopico = '' ) {
 		$this->query = "DELETE FROM  topicos WHERE idtopico = $idtopico";
 		$this->del_query();
 	}
-
+	//Función que permite la actualización de datos de un historial tópico
+	//Parámetros: Conjunto de datos específicos del área de tópico 
 	public function update( $topico_data = array() ) {
 		foreach ($topico_data as $key => $value) {
 			$$key = $value;
@@ -57,7 +63,8 @@ class HistorialTopico extends Model {
 		return $row;
 	}
 
-
+	//Función que permite la inserción de datos desde el modelo a la vista y apertura de un historial tópico
+	//Parámetros: Conjunto de datos personales del paciente así como datos específicos del área de tópico 
 	public function setNuevoHistorial( $topico_data = array() ) {
 		foreach ($topico_data as $key => $value) {
 			$$key = $value;
@@ -75,7 +82,8 @@ class HistorialTopico extends Model {
 		
 		return $row;
 	}
-
+	//Función que permite la apertura de un nuevo examen tópico
+	//Parámetros: Conjunto de datos  específicos de un exámen tópico 
 	public function setNuevoExamen( $topico_data = array() ) {
 		foreach ($topico_data as $key => $value) {
 			$$key = $value;
@@ -93,8 +101,9 @@ class HistorialTopico extends Model {
 		
 		return $row;
 	}
-
-
+	
+	//Función que permite obtener una escuela o todas las escuelas dependiendo de la existencia del id dentro de la vista
+	//ID de escuela profesional
 	public function getEscuelas( $idescuela = '' ) {
 		$this->query = ($idescuela != '')
 			?"SELECT * FROM escuelas WHERE idescuela = $idescuela"
@@ -113,6 +122,7 @@ class HistorialTopico extends Model {
 		return $data;
 	}
 
+<<<<<<< HEAD
 	public function getBuscar($dni_per) {
 		$this->query ="SELECT * FROM vista_PacienteTopico where dni_per like '%$dni_per%'";
 		
@@ -130,3 +140,6 @@ class HistorialTopico extends Model {
 	}
 
 }
+=======
+}
+>>>>>>> 8ef1e65935d864214913ce154defb999effa2c23

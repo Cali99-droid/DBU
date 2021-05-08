@@ -1,6 +1,7 @@
 <?php 
 class UsersModel extends Model {
-	
+	//Función que permite la creación de una nueva cuenta de usuario
+	//Parámetros: Conjunto de datos específicos de un usuario
 	public function set( $user_data = array() ) {
 		foreach ($user_data as $key => $value) {
 			$$key = $value;
@@ -13,7 +14,8 @@ class UsersModel extends Model {
 		
 		return $row;
 	}
-
+	//Función que muestra un usuario o todos dependiento de la existencia del parámentro en la base de datos
+	//Parámetro: (String)Nombre de usuario
 	public function get( $user = '' ) {
 		$this->query = ($user != '')
 			?"SELECT * FROM Vista_CUENTAS WHERE user = '$user'"
@@ -31,12 +33,14 @@ class UsersModel extends Model {
 
 		return $data;
 	}
-
+	//Función que permite la eliminación de un usuario
+	//Parámetro: (String)Nombre de usuario
 	public function del( $user = '' ) {
 		$this->query = "DELETE FROM cuentas WHERE user = '$user'";
 		$this->del_query();
 	}
-
+	//Función que permite la validación de un usuario comparando los datos del modelo con los de la base de datos
+	//Parámetros: (String)Nombre de usuario y (String)contraseña
 	public function validate_user($user, $pass) {
 		$this->query = "SELECT CONCAT(p.nom_per, '  ', p.ape_pat) nombre, r.rol 
 		FROM cuentas c INNER JOIN personas p on c.idpersona = p.idpersona
@@ -52,6 +56,8 @@ class UsersModel extends Model {
 
 		return $data;
 	}
+
+
 
 
 	public function asignarCuenta( $user_data = array() ) {
