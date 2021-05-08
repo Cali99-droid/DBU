@@ -8,7 +8,7 @@ $topico = $top_controller->getBuscar($_POST['nombre']);
 if( empty($topico) ) {
 	print( '
 		<div class="container">
-			<p class="item  error">No hay Status</p>
+			<p class="item  error">No existe el paciente</p>
 		</div>
 	');
 } else {

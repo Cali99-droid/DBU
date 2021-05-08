@@ -35,7 +35,7 @@ if( empty($topico) ) {
 
 			<form method="POST">
 			
-				<input type="hidden" name="r" value="psicologia-estadis">
+				<input type="hidden" name="r" value="topico-estadis">
 				<input class="boton--dash" type="submit" value="">
 				<p class="no-margin graf">Tablero informatívo</p>
 			</form>

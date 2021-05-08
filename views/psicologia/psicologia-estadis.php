@@ -5,18 +5,10 @@
 	$template_psicologia = '
 	
 
-    <iframe width="1200" height="650" 
-     src="https://app.powerbi.com/view?r=eyJrIjoiMmQzNDk4NDUtMTRkYi00ZjNjLTk3NjYtNWYwNWYzNTkwZGFiIiwidCI6ImM1ZDIzYjA5LWFmMDEtNGFlYy1hYjc0LTdhNWQxZGEwMTA4NCJ9" 
-      frameborder="0" allowFullScreen="true"></iframe>
+	<iframe  width="1165" height="650" 
+	src="https://app.powerbi.com/view?r=eyJrIjoiMmQzNDk4NDUtMTRkYi00ZjNjLTk3NjYtNWYwNWYzNTkwZGFiIiwidCI6ImM1ZDIzYjA5LWFmMDEtNGFlYy1hYjc0LTdhNWQxZGEwMTA4NCJ9&pageName=ReportSection" 
+	frameborder="0" allowFullScreen="true"></iframe>
 		'; 		
 
-		$template_psicologia  .= '
-				    
-	</body>
-</main>
-
-  </html>
-
-	';
 
 	printf($template_psicologia);

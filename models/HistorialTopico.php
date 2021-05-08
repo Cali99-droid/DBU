@@ -122,7 +122,6 @@ class HistorialTopico extends Model {
 		return $data;
 	}
 
-<<<<<<< HEAD
 	public function getBuscar($dni_per) {
 		$this->query ="SELECT * FROM vista_PacienteTopico where dni_per like '%$dni_per%'";
 		
@@ -140,6 +139,3 @@ class HistorialTopico extends Model {
 	}
 
 }
-=======
-}
->>>>>>> 8ef1e65935d864214913ce154defb999effa2c23
