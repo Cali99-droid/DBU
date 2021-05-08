@@ -15,6 +15,11 @@ class PsiController {
 		return $this->model->get($psicologia_id);
 	}
 
+	
+	public function getBuscar( $dni_per) {
+		return $this->model->getBuscar($dni_per);
+	}
+
 	public function del( $psicologia_id = '' ) {
 		return $this->model->del($psicologia_id);
 	}

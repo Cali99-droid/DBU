@@ -14,6 +14,10 @@ class UsersController {
 		return $this->model->asignarCuenta($user_data);
 	}
 
+	public function getBuscar( $dni_per) {
+		return $this->model->getBuscar($dni_per);
+	}
+
 	public function get( $user_id = '' ) {
 		return $this->model->get($user_id);
 	}

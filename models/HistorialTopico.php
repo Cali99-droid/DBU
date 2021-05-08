@@ -113,4 +113,20 @@ class HistorialTopico extends Model {
 		return $data;
 	}
 
+	public function getBuscar($dni_per) {
+		$this->query ="SELECT * FROM vista_PacienteTopico where dni_per like '%$dni_per%'";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
 }

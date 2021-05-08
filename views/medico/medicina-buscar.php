@@ -5,13 +5,24 @@
 
 
 $med_controller = new MedController();
-$medicina = $med_controller->get();
+$medicina = $med_controller->getBuscar($_POST['nombre']);
 
 if( empty($medicina) ) {
 	print( '
 		<div class="container">
 			<p class="item  error">No hay Datos</p>
 		</div>
+
+        <script>
+        function reloadPage(url) {
+            setTimeout(function (){
+                window.location.href = url
+            }, 2000)
+        }
+        window.onload = function () {
+         reloadPage("psicologia")
+         }
+         </script>
 	');
 } else {
 	$template_medicina = '

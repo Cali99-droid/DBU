@@ -5,13 +5,23 @@
 
 
 $psi_controller = new PsiController();
-$psicologia = $psi_controller->get();
+$psicologia = $psi_controller->getBuscar($_POST['nombre']);
 
 if( empty($psicologia) ) {
 	print( '
 		<div class="container">
-			<p class="item  error">No hay Status</p>
+			<p class="item  error">No existe el paciente</p>
 		</div>
+        <script>
+        function reloadPage(url) {
+            setTimeout(function (){
+                window.location.href = url
+            }, 2000)
+        }
+        window.onload = function () {
+         reloadPage("psicologia")
+         }
+         </script>
 	');
 } else {
 	$template_psicologia = '
@@ -22,15 +32,13 @@ if( empty($psicologia) ) {
 		</div>
 
 		<div class="gestion__area">
-			<div class="busqueda">
-				<form method="POST">
-					<input type="hidden" name="r" value="psicologia-buscar">
-					<input class="campo__buscar" name = "nombre" type="number" placeholder="Todos">
-					<input class="boton boton--nuevo" type="submit" value="Buscar">
-				</form>
-			</div> 
-			
-			
+        <div class="busqueda">
+        <form method="POST">
+            <input type="hidden" name="r" value="psicologia-buscar">
+            <input class="campo__buscar" name = "nombre" type="number" placeholder="DNI">
+            <input class="boton boton--nuevo" type="submit" value="Buscar">
+        </form>
+    </div> 
 			<form method="POST">
 			
 				<input type="hidden" name="r" value="psicologia-estadis">
@@ -118,7 +126,6 @@ if( empty($psicologia) ) {
 
 	';
 
-
-		printf($template_psicologia);
+    printf($template_psicologia);
 	
 }

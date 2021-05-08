@@ -15,6 +15,10 @@ class MedController {
 		return $this->model->get($medico_id);
 	}
 
+	public function getBuscar( $dni_per) {
+		return $this->model->getBuscar($dni_per);
+	}
+
 	public function del( $medico_id = '' ) {
 		return $this->model->del($medico_id);
 	}

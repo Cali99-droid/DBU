@@ -15,6 +15,10 @@ class OdonController {
 		return $this->model->get($odontologia_id);
 	}
 
+	public function getBuscar( $dni_per) {
+		return $this->model->getBuscar($dni_per);
+	}
+
 	public function del( $odontologia_id = '' ) {
 		return $this->model->del($odontologia_id);
 	}

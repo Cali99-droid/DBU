@@ -19,11 +19,19 @@ a{
 body{
     font-family: 'Kumbh Sans', sans-serif;
 }
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .no-margin{
     margin: 0;
 }
-
+.graf{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primario);
+}
 .no-padding{
     padding: 0;
 }
@@ -356,11 +364,13 @@ body{
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
+    height: 4rem;
 }
 
 .campo__buscar{
     padding: 1rem;
     font-size: 2rem;
+    height: 4rem;
 }
 
 .campo__med{
@@ -440,7 +450,7 @@ tr:hover {background-color:#ffffff;}
     text-align: center;
 }
 
-.boton--editar, .boton--eliminar, .boton--reporte{
+.boton--editar, .boton--eliminar, .boton--reporte, .boton--dash{
     height: 2rem;
     width: 3rem;
     background-image: url('../img/bx-edit.svg');
@@ -459,6 +469,16 @@ tr:hover {background-color:#ffffff;}
 .boton--reporte{
     background-image: url('../img/doc.svg');
 }
+
+.boton--dash{
+    height: 5rem;
+    width: 10rem;
+    background-image: url('../img/data.png');
+    background-size: 5rem;
+    background-position-x: 4rem;
+}
+
+
 
 .fondo_chico{
     width: 12rem;

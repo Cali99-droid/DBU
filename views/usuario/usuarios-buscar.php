@@ -3,7 +3,7 @@
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 
 $user_controller = new UsersController();
-$usuarios = $user_controller->get();
+$usuarios = $user_controller->getBuscar($_POST['nombre']);
 
 if( empty($usuarios) ) {
 	print( '

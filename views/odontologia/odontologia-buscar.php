@@ -3,12 +3,12 @@
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 
 $odon_controller = new OdonController();
-$odontologia = $odon_controller->get();
+$odontologia = $odon_controller->getBuscar($_POST['nombre']);
 
 if( empty($odontologia) ) {
 	print( '
 		<div class="container">
-			<p class="item  error">No hay Status</p>
+			<p class="item  error">No existe el paciente</p>
 		</div>
 	');
 } else {

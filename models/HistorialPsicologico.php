@@ -59,4 +59,21 @@ class HistorialPsicologico extends Model {
 		return $row;
 	}
 
+
+	public function getBuscar($dni_per) {
+		$this->query ="SELECT * FROM Vista_PacientePsicologico where dni_per like '%$dni_per%'";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
 }

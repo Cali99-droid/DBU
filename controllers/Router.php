@@ -36,7 +36,9 @@ class Router {
 					else if( $_POST['r'] == 'psicologia-add' )  $controller->load_view('psicologia/psicologia-add');
 					else if( $_POST['r'] == 'psicologia-edit' )  $controller->load_view('psicologia/psicologia-edit');
 					else if( $_POST['r'] == 'psicologia-delete' )  $controller->load_view('psicologia/psicologia-delete');
+					else if( $_POST['r'] == 'psicologia-buscar' )  $controller->load_view('psicologia/psicologia-buscar');
 					else if( $_POST['r'] == 'psicologia-report' )  $controller->load_login('psicologia/psicologia-report');
+					else if( $_POST['r'] == 'psicologia-estadis' )  $controller->load_login('psicologia/psicologia-estadis');
 					break;
 
 				case 'medicina':
@@ -45,6 +47,7 @@ class Router {
 					else if( $_POST['r'] == 'medicina-edit' )  $controller->load_view('medico/medicina-edit');
 					else if( $_POST['r'] == 'medicina-delete' )  $controller->load_view('medico/medicina-delete');
 					else if( $_POST['r'] == 'medico-report' )  $controller->load_login('medico/medico-report');
+					else if( $_POST['r'] == 'medicina-buscar' )  $controller->load_view('medico/medicina-buscar');
 					break;
 
 				case 'topico':
@@ -53,6 +56,7 @@ class Router {
 					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('topico/historial-add');
 					else if( $_POST['r'] == 'topico-edit' )  $controller->load_view('topico/topico-edit');
 					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico/topico-report');
+					else if( $_POST['r'] == 'topico-buscar' )  $controller->load_view('topico/topico-buscar');
 					break;
 
 				case 'odontologia':
@@ -61,6 +65,7 @@ class Router {
 					else if( $_POST['r'] == 'odontologia-edit' )  $controller->load_view('odontologia/odontologia-edit');
 					else if( $_POST['r'] == 'odontologia-delete' )  $controller->load_view('odontologia/odontologia-delete');
 					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
+					else if( $_POST['r'] == 'odontologia-buscar' )  $controller->load_view('odontologia/odontologia-buscar');
 					break;
 
 				case 'usuarios':
@@ -69,6 +74,7 @@ class Router {
 					else if( $_POST['r'] == 'cuenta-add' )  $controller->load_view('usuario/cuenta-add');
 					else if( $_POST['r'] == 'cuenta-delete' )  $controller->load_view('usuario/cuenta-delete');
 					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
+					else if( $_POST['r'] == 'usuarios-buscar' )  $controller->load_view('usuario/usuarios-buscar');
 					break;
 
 				case 'salir':

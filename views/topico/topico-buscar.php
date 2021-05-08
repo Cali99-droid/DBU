@@ -3,7 +3,7 @@
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 
 $top_controller = new TopController();
-$topico = $top_controller->get();
+$topico = $top_controller->getBuscar($_POST['nombre']);
 
 if( empty($topico) ) {
 	print( '

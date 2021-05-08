@@ -15,6 +15,10 @@ class TopController {
 		return $this->model->get($topico_id);
 	}
 
+	public function getBuscar( $dni_per) {
+		return $this->model->getBuscar($dni_per);
+	}
+
 	public function getEscuelas( $escuela_id = '' ) {
 		return $this->model->getEscuelas($escuela_id);
 	}
