@@ -1,8 +1,96 @@
 <?php 
 
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
-
-
+if($_SESSION['ROL'] == 'Estudiante'  ) {
+	$med_controller = new MedController();
+    $medicina = $med_controller->getHistorial($_SESSION['dni_per']);
+	if( empty($medicina) ) {
+		print( '
+			<div class="container">
+				<p class="item  error">No hay Datos del paciente</p>
+			</div>
+		');
+	} else {
+		$template_medicina = '
+		
+		<div class="gestion">
+			<div class="gestion__nombre">
+				<h2 class="no-margin gestion__titulo">Mis Consultas Médicas</h2>
+			</div>
+	
+		
+	
+			<div class="contenedor ">   
+				<div class="contenedor__tabla">    
+					<table class="tabla">
+						<thead>
+						<tr>
+							<th>Id</th>
+							<th>Paciente</th>
+							<th>Diagnostico</th>
+							<th>Tratamiento</th>
+							<th>Fecha</th>
+							<th>Estado</th>
+							
+							
+							<th class="act">Acciones</th>
+							
+							
+						</tr>
+						</thead>
+						<tbody>';
+	
+				for ($n=0; $n < count($medicina); $n++) { 
+					$estado =  $medicina[$n]['estado_atencion'];
+					$estadoT = 'completado';
+					if($estado == 'Completado'){
+						$estadoT = 'completado';
+					 }else{
+						 $estadoT = 'pendiente';
+					 }
+					$template_medicina .= '
+						<tr>
+							<td>' . $medicina[$n]['idmedico'] . '</td>
+							<td>' .  $medicina[$n]['Paciente'] . '</td>
+							<td>' .  $medicina[$n]['diagnostico'] . '</td>
+							<td>' .  $medicina[$n]['tratamiento'] . '</td>
+							<td>' .  $medicina[$n]['fecha'] . '</td> 
+							<td class="center"><span class=" label '.$estadoT.'">' .  $medicina[$n]['estado_atencion'] . '</span></td>
+							
+	
+						
+							<td  class="action">
+								
+	
+								<form method="POST">
+									<input type="hidden" name="r" value="medico-report">
+									<input type="hidden" name="idmedico" value="' . $medicina[$n]['idmedico'] . '">
+									<input class="boton--reporte" type="submit" value="">
+								</form>
+							</td>
+						</tr>
+				      '; 
+			     }
+	
+			$template_medicina  .= '
+						</tbody>
+					</table>
+				</div>
+			</div>  
+		</div>
+	
+		</body>
+	  </main>
+	
+	  </html>
+	
+		';
+	
+	
+			
+		
+	}
+}else{
 
 $med_controller = new MedController();
 $medicina = $med_controller->get();
@@ -122,5 +210,8 @@ if( empty($medicina) ) {
 	';
 
 
-	printf($template_medicina);
+
+   }
 }
+
+printf($template_medicina);

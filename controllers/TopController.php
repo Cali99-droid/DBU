@@ -47,4 +47,9 @@ class TopController {
 		return $this->model->getBuscar($dni_per);
 	}
 
+	public function getHistorial( $idpaciente) {
+		return $this->model->getHistorial($idpaciente);
+	}
+
+
 }

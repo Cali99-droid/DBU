@@ -42,10 +42,8 @@ class UsersModel extends Model {
 	//Función que permite la validación de un usuario comparando los datos del modelo con los de la base de datos
 	//Parámetros: (String)Nombre de usuario y (String)contraseña
 	public function validate_user($user, $pass) {
-		$this->query = "SELECT CONCAT(p.nom_per, '  ', p.ape_pat) nombre, r.rol 
-		FROM cuentas c INNER JOIN personas p on c.idpersona = p.idpersona
-	                   INNER JOIN roles r on c.idrol = r.idrol
-		 WHERE user = '$user' AND pass = '$pass'";
+		$this->query = "SELECT  * FROM  Vista_CUENTAS
+		 WHERE USER = '$user' AND PASS = md5('$pass')";
 		$this->get_query();
 
 		$data = array();

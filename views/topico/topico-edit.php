@@ -1,7 +1,7 @@
 <?php 
 $top_controller = new TopController();
 
-if($_POST['r'] == 'topico-edit' && $_SESSION['rol'] == 'Topico' && !isset($_POST['crud']) ) {
+if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST['crud']) ) {
 
 	$top = $top_controller->get($_POST['idtopico']);
     $dni = $_POST['dni_per'];
@@ -116,7 +116,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['rol'] == 'Topico' && !isset($_POST
 		);	
 	}
 
-} else if( $_POST['r'] == 'topico-edit' && $_SESSION['rol'] == 'Topico'&& $_POST['crud'] == 'set' ) {	
+} else if( $_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico'&& $_POST['crud'] == 'set' ) {	
 
 	$save_top = array(
 

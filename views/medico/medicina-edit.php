@@ -1,7 +1,7 @@
 <?php 
 $med_controller = new MedController();
 
-if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'Medico' && !isset($_POST['crud']) ) {
+if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_POST['crud']) ) {
 
 	$med = $med_controller->get($_POST['idmedico']);
     $dni = $_POST['dni_per'];
@@ -151,7 +151,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'Medico' && !isset($_PO
 		);	
 	}
 
-} else if( $_POST['r'] == 'medicina-edit' && $_SESSION['rol'] == 'Medico'&& $_POST['crud'] == 'set' ) {	
+} else if( $_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico'&& $_POST['crud'] == 'set' ) {	
 
 	$save_med = array(
 

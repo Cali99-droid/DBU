@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'odontologia-add' && $_SESSION['rol'] == 'Odontologo' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'odontologia-add' && $_SESSION['ROL'] == 'Odontologo' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
    
@@ -98,7 +98,7 @@ if( $_POST['r'] == 'odontologia-add' && $_SESSION['rol'] == 'Odontologo' && !iss
     </div>
 	', $fecha);	
 
-} else if( $_POST['r'] == 'odontologia-add' && $_SESSION['rol'] == 'Odontologo' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'odontologia-add' && $_SESSION['ROL'] == 'Odontologo' && $_POST['crud'] == 'set' ) {
     $odon_controller = new OdonController();
     $indice = 0;
     

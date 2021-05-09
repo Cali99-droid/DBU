@@ -1,7 +1,98 @@
 <?php 
 
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
-
+if($_SESSION['ROL'] == 'Estudiante'  ) {
+	$odon_controller = new OdonController();
+	$odontologia = $odon_controller->getHistorial($_SESSION['dni_per']);
+	if( empty($odontologia) ) {
+		print( '
+			<div class="container">
+				<p class="item  error">No hay Status</p>
+			</div>
+		');
+	} else {
+		$template_odontologia = '
+		
+		<div class="gestion">
+			<div class="gestion__nombre">
+				<h2 class="no-margin gestion__titulo">Mis consultas Odontológicas</h2>
+			</div>
+	
+			
+				
+				
+		
+	
+			<div class="contenedor ">   
+				<div class="contenedor__tabla">    
+					<table class="tabla">
+						<thead >
+						<tr>
+							<th>ID</th>
+							<th>Paciente</th>
+							<th>Diagnostico</th>
+							<th>Tratamiento</th>
+							<th>Fecha</th>
+							<th>Estado Atención</th>
+							<th class="act">Acciones</th>
+						
+							
+						</tr>
+						</thead>
+						<tbody>';
+	
+				for ($n=0; $n < count($odontologia); $n++) { 
+					$estado =  $odontologia[$n]['estado_atencion'];
+					$estadoT = 'completado';
+	
+					if($estado == 'Completado'){
+					   $estadoT = 'completado';
+					}else{
+						$estadoT = 'pendiente';
+					}
+					$template_odontologia .= '
+						<tr>
+							
+							<td>' .  $odontologia[$n]['idodontologo'] . '</td>
+							<td>' .  $odontologia[$n]['Paciente'] . '</td>
+							<td>' .  $odontologia[$n]['diagnostico'] . '</td>
+							<td>' .  $odontologia[$n]['tratamiento'] . '</td>
+							<td>' .  $odontologia[$n]['fecha'] . '</td>
+		
+							<td class="center"><span class=" label '.$estadoT.'">' .  $odontologia[$n]['estado_atencion'] . '</span></td> 
+	
+						
+							<td  class="action">
+							
+	
+								
+								<form method="POST">
+									<input type="hidden" name="r" value="odontologia-report">
+									<input type="hidden" name="idodontologo" value="' . $odontologia[$n]['idodontologo'] . '">
+									<input class="boton--reporte" type="submit" value="">
+								</form>
+								
+							</td>
+						</tr>
+				'; 
+			}
+	
+			$template_odontologia  .= '
+						</tbody>
+					</table>
+				</div>
+			</div>  
+		</div>
+	
+		</body>
+	</main>
+	
+	  </html>
+	
+		';
+	
+	}
+}else{
 $odon_controller = new OdonController();
 $odontologia = $odon_controller->get();
 
@@ -121,6 +212,8 @@ if( empty($odontologia) ) {
 
 	';
 
-
-	printf($template_odontologia);
 }
+	
+}
+
+printf($template_odontologia);

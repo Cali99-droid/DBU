@@ -27,6 +27,11 @@ class OdonController {
 		return $this->model->update($odontologia_data);
 	}
 
+	public function getHistorial( $idpaciente) {
+		return $this->model->getHistorial($idpaciente);
+	}
+
+
 
 
 }

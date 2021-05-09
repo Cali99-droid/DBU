@@ -172,7 +172,7 @@ $pdf->SetFont('Arial','I',8);
     $pdf->Ln(5);
     $pdf->Cell(128);
     $pdf->write(5,utf8_decode('Odon. '));
-    $pdf->write(5,utf8_decode($_SESSION['nombre']));
+   // $pdf->write(5,utf8_decode($_SESSION['nombre']));
     $pdf->Ln(5);
 
 

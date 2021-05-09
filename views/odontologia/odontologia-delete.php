@@ -1,7 +1,7 @@
 <?php 
 $odon_controller = new OdonController();
 
-if( $_POST['r'] == 'odontologia-delete' && $_SESSION['rol'] == 'Odontologo' && !isset($_POST['crud'])  ) {
+if( $_POST['r'] == 'odontologia-delete' && $_SESSION['ROL'] == 'Odontologo' && !isset($_POST['crud'])  ) {
 
 	$odon = $odon_controller->get($_POST['idodontologo']);
 
@@ -52,7 +52,7 @@ if( $_POST['r'] == 'odontologia-delete' && $_SESSION['rol'] == 'Odontologo' && !
 		);	
 	}
 
-} else if( $_POST['r'] == 'odontologia-delete' && $_SESSION['rol'] == 'Odontologo' && $_POST['crud'] == 'del' ) {	
+} else if( $_POST['r'] == 'odontologia-delete' && $_SESSION['ROL'] == 'Odontologo' && $_POST['crud'] == 'del' ) {	
 
 	$odon = $odon_controller->del($_POST['idodontologo']);
 

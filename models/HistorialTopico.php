@@ -138,4 +138,22 @@ class HistorialTopico extends Model {
 		return $data;
 	}
 
+	public function getHistorial( $idpaciente = '' ) {
+		$this->query = ($idpaciente != '')
+			?"SELECT * FROM vista_PacienteTopico WHERE dni_per = $idpaciente"
+			:"SELECT * FROM vista_PacienteTopico;";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
 }

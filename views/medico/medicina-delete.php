@@ -1,7 +1,7 @@
 <?php 
 $med_controller = new MedController();
 
-if( $_POST['r'] == 'medicina-delete' && $_SESSION['rol'] == 'Medico' && !isset($_POST['crud'])  ) {
+if( $_POST['r'] == 'medicina-delete' && $_SESSION['ROL'] == 'Medico' && !isset($_POST['crud'])  ) {
 
 	$med = $med_controller->get($_POST['idmedico']);
 
@@ -52,7 +52,7 @@ if( $_POST['r'] == 'medicina-delete' && $_SESSION['rol'] == 'Medico' && !isset($
 		);	
 	}
 
-} else if( $_POST['r'] == 'medicina-delete' && $_SESSION['rol'] == 'Medico' && $_POST['crud'] == 'del' ) {	
+} else if( $_POST['r'] == 'medicina-delete' && $_SESSION['ROL'] == 'Medico' && $_POST['crud'] == 'del' ) {	
 
 	$med = $med_controller->del($_POST['idmedico']);
 

@@ -1,7 +1,7 @@
 <?php 
 $psi_controller = new PsiController();
 
-if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
+if($_POST['r'] == 'psicologia-edit' && $_SESSION['ROL'] == 'psicologo' && !isset($_POST['crud']) ) {
 
 	$psi = $psi_controller->get($_POST['idpsicologia']);
     $dni = $_POST['dni_per'];
@@ -105,7 +105,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo' && !isset
 		);	
 	}
 
-} else if( $_POST['r'] == 'psicologia-edit' && $_SESSION['rol'] == 'psicologo'&& $_POST['crud'] == 'set' ) {	
+} else if( $_POST['r'] == 'psicologia-edit' && $_SESSION['ROL'] == 'psicologo'&& $_POST['crud'] == 'set' ) {	
 
 	$save_psi = array(
 

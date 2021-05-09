@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'psicologia-add' && $_SESSION['ROL'] == 'psicologo' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
    
@@ -60,7 +60,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && !isset
     </div>
 	', $fecha);	
 
-} else if( $_POST['r'] == 'psicologia-add' && $_SESSION['rol'] == 'psicologo' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'psicologia-add' && $_SESSION['ROL'] == 'psicologo' && $_POST['crud'] == 'set' ) {
     $psi_controller = new PsiController();
     $indice = 0;
 

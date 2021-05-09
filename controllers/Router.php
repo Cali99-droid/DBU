@@ -19,14 +19,16 @@ class Router {
 
 		if($_SESSION['ok']) {
 			//Aquí va toda la programación de nuestra webapp
-
+          
 				$this->route = isset($_GET['r']) ? $_GET['r'] : 'home';
 				//$_SESSION['tit'] = "de Psicologia";
+				
 		
 
 			$controller = new ViewController();
 
 			switch ($this->route) {
+
 				case 'home':
 					$controller->load_view('home');
 					break;
@@ -122,8 +124,9 @@ class Router {
 					$_SESSION['ok'] = true;
 
 					foreach ($session as $row) {
-						$_SESSION['nombre'] = $row['nombre'];
-						$_SESSION['rol'] = $row['rol'];
+						$_SESSION['Paciente'] = $row['Paciente'];
+						$_SESSION['ROL'] = $row['ROL'];
+						$_SESSION['dni_per'] = $row['dni_per'];
 					//	$_SESSION['idrol'] = $row['idrol'];
 					}
 					header('Location: ./');

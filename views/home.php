@@ -55,6 +55,9 @@ $template = '
 	
 ';
 
+
+
+
 $templateAdmin = '
 
 <div class="gestion">
@@ -135,12 +138,12 @@ $templateAdmin = '
 ';
 
 
-if($_SESSION['rol'] == 'Administrador'){
+if($_SESSION['ROL'] == 'Administrador'){
     printf(
         $templateAdmin,
-        $_SESSION['nombre'],
-        $_SESSION['nombre'],
-        $_SESSION['rol']
+        $_SESSION['Paciente'],
+        $_SESSION['Paciente'],
+        $_SESSION['ROL']
     
     );
 
@@ -148,9 +151,9 @@ if($_SESSION['rol'] == 'Administrador'){
 
 printf(
 	$template,
-	$_SESSION['nombre'],
-	$_SESSION['nombre'],
-	$_SESSION['rol']
+    $_SESSION['Paciente'],
+    $_SESSION['Paciente'],
+    $_SESSION['ROL']
 
 );
 

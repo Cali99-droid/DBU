@@ -1,7 +1,7 @@
 <?php 
 $psi_controller = new PsiController();
 
-if( $_POST['r'] == 'psicologia-delete' && $_SESSION['rol'] == 'psicologo' && !isset($_POST['crud'])  ) {
+if( $_POST['r'] == 'psicologia-delete' && $_SESSION['ROL'] == 'psicologo' && !isset($_POST['crud'])  ) {
 
 	$psi = $psi_controller->get($_POST['idpsicologia']);
 
@@ -52,7 +52,7 @@ if( $_POST['r'] == 'psicologia-delete' && $_SESSION['rol'] == 'psicologo' && !is
 		);	
 	}
 
-} else if( $_POST['r'] == 'psicologia-delete' && $_SESSION['rol'] == 'psicologo' && $_POST['crud'] == 'del' ) {	
+} else if( $_POST['r'] == 'psicologia-delete' && $_SESSION['ROL'] == 'psicologo' && $_POST['crud'] == 'del' ) {	
 
 	$psi = $psi_controller->del($_POST['idpsicologia']);
 

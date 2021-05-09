@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
     // $fecha = date("Y-m-d",strtotime($fecha."- 1 days")); 
@@ -106,7 +106,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && !isset($_PO
     </div>
 	', $fecha);	
 
-} else if( $_POST['r'] == 'medicina-add' && $_SESSION['rol'] == 'Medico' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && $_POST['crud'] == 'set' ) {
     $med_controller = new MedController();
     $indice = 0;
     

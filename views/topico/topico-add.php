@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'topico-add' && $_SESSION['ROL'] == 'Topico' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
    
@@ -86,7 +86,7 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && !isset($_POST
     </div>
 	', $fecha);	
 
-} else if( $_POST['r'] == 'topico-add' && $_SESSION['rol'] == 'Topico' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'topico-add' && $_SESSION['ROL'] == 'Topico' && $_POST['crud'] == 'set' ) {
     $top_controller = new TopController();
     $indice = 0;
     

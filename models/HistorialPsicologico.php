@@ -76,4 +76,22 @@ class HistorialPsicologico extends Model {
 		return $data;
 	}
 
+	public function getHistorial( $idpaciente = '' ) {
+		$this->query = ($idpaciente != '')
+			?"SELECT * FROM Vista_PacientePsicologico WHERE dni_per = $idpaciente"
+			:"SELECT * FROM Vista_PacientePsicologico;";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
 }

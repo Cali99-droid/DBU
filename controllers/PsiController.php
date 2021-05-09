@@ -34,5 +34,11 @@ class PsiController {
 	}
 
 
+	public function getHistorial( $idpaciente) {
+		return $this->model->getHistorial($idpaciente);
+	}
+
+
+
 
 }
