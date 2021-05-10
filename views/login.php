@@ -28,12 +28,12 @@ print('
 			<form action="" class="formulario" method = "POST">
 				<div class="campo">
 					<label for="user" class="campo__label">Usuario</label>
-					<input class="campo__field" type="text" name="user" placeholder="Nombre de usuario" id="user">
+					<input class="campo__field" type="text" name="user" placeholder="Nombre de usuario" id="user" required>
 				</div>
 
 				<div class="campo">
 					<label for="pass" class="campo__label">Contraseña</label>
-					<input type="password" name="pass" id="pass"  class="campo__field" placeholder="Password"></input>
+					<input type="password" name="pass" id="pass"  class="campo__field" placeholder="Password" required></input>
 				</div>
 
 				<div class="campo">

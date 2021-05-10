@@ -37,10 +37,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
         </div>
 
         <div class="gestion__cuerpo--med">
-            <div class="dni__med">
-                <label for="codigo" class="campo__label medico">DNI</label>
-                <input  class="campo__field num" type="number" value="%s"  placeholder="DNI " name="codigo" required>
-            </div>
+            
             <form method="POST" class="formulario__entrada--med">
               
                 <fieldset class="grupo">
@@ -108,6 +105,10 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
                 </fieldset>
 
                 <div class="campo campo__med">
+                    <div class="dni__med">
+                        <label for="codigo" class="campo__label medico">DNI</label>
+                        <input  class="campo__field num" type="number" value="%s"  placeholder="DNI " name="codigo" required>
+                    </div>
                    
                     <label for="fecha" class="campo__label medico">Fecha</label>
                     <input  type="date" class="campo__field-med" name="fecha"  value="%s"></input>
@@ -134,7 +135,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
 
 		printf(
 			$template_psi,
-            $dni,
+            
 			$med[0]['ant_medicos'],
 			$med[0]['ant_quirurgicos'],
             $med[0]['hozpitalizaciones'],
@@ -145,6 +146,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
             $med[0]['sintomas'],
             $med[0]['diagnostico'],
             $med[0]['tratamiento'],
+            $dni,
             $med[0]['fecha'],
             $med[0]['idmedico'],
             $med[0]['idmedico']
@@ -186,7 +188,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
             }, 3000)
         }
         window.onload = function () {
-            reloadPage("psicologia")
+            reloadPage("medicina")
         }
         </script>
         
@@ -204,7 +206,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
             }, 2000)
         }
         window.onload = function () {
-         reloadPage("psicologia")
+         reloadPage("medicina")
          }
          </script>
   

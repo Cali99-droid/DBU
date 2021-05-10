@@ -16,7 +16,10 @@ class MedController {
 	public function get( $medico_id = '' ) {
 		return $this->model->get($medico_id);
 	}
-
+    
+	public function update( $medico_data = array()){
+        return $this->model->update($medico_data);
+	}
 
 
 	public function del( $medico_id = '' ) {

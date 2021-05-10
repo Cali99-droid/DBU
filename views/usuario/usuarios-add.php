@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'usuarios-add' && $_SESSION['rol'] == 'Administrador' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'usuarios-add' && $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
    
@@ -117,7 +117,7 @@ if( $_POST['r'] == 'usuarios-add' && $_SESSION['rol'] == 'Administrador' && !iss
         ', $escuela_select);	
     
 
-} else if( $_POST['r'] == 'usuarios-add' && $_SESSION['rol'] == 'Administrador' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'usuarios-add' && $_SESSION['ROL'] == 'Administrador' && $_POST['crud'] == 'set' ) {
     $user_controller = new UsersController();
     $indice = 0;
     $newDate = date("Y/m/d", strtotime($_POST['fech_nac']));

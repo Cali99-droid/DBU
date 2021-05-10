@@ -1,6 +1,6 @@
   
 <?php 
-if( $_POST['r'] == 'cuenta-add' && $_SESSION['rol'] == 'Administrador' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'cuenta-add' && $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
    
      $fecha =  date("Y-m-d");
    
@@ -64,7 +64,7 @@ if( $_POST['r'] == 'cuenta-add' && $_SESSION['rol'] == 'Administrador' && !isset
         ');	
     
 
-} else if( $_POST['r'] == 'cuenta-add' && $_SESSION['rol'] == 'Administrador' && $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'cuenta-add' && $_SESSION['ROL'] == 'Administrador' && $_POST['crud'] == 'set' ) {
     $user_controller = new UsersController();
     $indice = 0;
     	$new_user = array(

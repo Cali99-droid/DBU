@@ -67,7 +67,7 @@ if( $_POST['r'] == 'medicina-delete' && $_SESSION['ROL'] == 'Medico' && !isset($
             }, 2000)
         }
         window.onload = function () {
-         reloadPage("psicologia")
+         reloadPage("medicina")
          }
 		</script>
 	';

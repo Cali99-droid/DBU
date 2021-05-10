@@ -90,11 +90,7 @@ if( empty($pacientes) ) {
 								<input type="hidden" name="idpaciente" value="' . $pacientes[$n]['IDPACIENTE'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>
-							<form method="POST">
-								<input type="hidden" name="r" value="pacientes-report">
-								<input type="hidden" name="idpaciente" value="' . $pacientes[$n]['IDPACIENTE'] . '">
-								<input class="boton--reporte" type="submit" value="">
-							</form>
+							
 						</td>
 					</tr>
 			'; 

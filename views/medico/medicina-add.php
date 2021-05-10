@@ -17,12 +17,11 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
         </div>
 
         <div class="gestion__cuerpo--med">
-            <div class="dni__med">
-                <label for="codigo" class="campo__label medico">DNI</label>
-                <input  class="campo__field " type="number" placeholder="DNI " name="codigo" required>
-            </div>
+
+                
+  
             <form method="POST" class="formulario__entrada--med">
-              
+                   
                 <fieldset class="grupo">
 
                 <legend align="left">Antecedentes</legend>
@@ -88,6 +87,10 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
                 </fieldset>
 
                 <div class="campo campo__med">
+                    <div class="dni__med">
+                    <label for="codigo" class="campo__label medico">DNI</label>
+                    <input  class="campo__field " type="number" placeholder="DNI " name="codigo" required>
+                    </div>
                    
                     <label for="fecha" class="campo__label medico">Fecha</label>
                     <input  type="date" class="campo__field-med" name="fecha"  value="%s"></input>
@@ -127,7 +130,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
 	
 	);
 
-	$med = $med_controller->set($new_psi);
+	$med = $med_controller->set($new_med);
     $mensaje = 'INSERTADO CON ÉXITO';
     if($med[0] == $mensaje ){
         $template = '

@@ -1,7 +1,7 @@
   
 <?php 
 
-if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['rol'] == 'Administrador' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
    
     // $fecha =  date("Y-m-d");
     
@@ -98,7 +98,7 @@ $escuelas = $topico->getEscuelas();
     </div>
 	', $escuela_select);	
 
-} else if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['rol'] == 'Administrador'&& $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['ROL'] == 'Administrador'&& $_POST['crud'] == 'set' ) {
     $top_controller = new TopController();
     $indice = 0;
     $newDate = date("Y/m/d", strtotime($_POST['fech_nac']));
