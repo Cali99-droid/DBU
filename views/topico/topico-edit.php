@@ -95,7 +95,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 
                 <div class="campo guardar_psi">
                     <input type="submit" value="Guardar" class="boton boton--guardar ">
-                    <input type="hidden" name="r" value="topico-add">
+                    <input type="hidden" name="r" value="topico-edit">
 				    <input type="hidden" name="crud" value="set">
                 </div>
             </form>
@@ -134,9 +134,8 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 	);
 
 	$top = $top_controller->update($save_top);
-    $mensajeC = 'INSERTADO CON ÉXITO';
     $mensajeU = 'ACTUALIZADO CON ÉXITO';
-    if($top[0] == $mensajeC || $top[0] == $mensajeU ){
+    if($top[0] == $mensajeU ){
         $template = '
 		<div class="container">
 			<p class="exito">%s</p>
@@ -148,7 +147,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
             }, 3000)
         }
         window.onload = function () {
-            reloadPage("psicologia")
+            reloadPage("topico")
         }
         </script>
         
@@ -166,7 +165,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
             }, 2000)
         }
         window.onload = function () {
-         reloadPage("psicologia")
+         reloadPage("topico")
          }
          </script>
   

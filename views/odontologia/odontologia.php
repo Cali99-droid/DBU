@@ -99,7 +99,7 @@ $odontologia = $odon_controller->get();
 if( empty($odontologia) ) {
 	print( '
 		<div class="container">
-			<p class="item  error">No hay Status</p>
+			<p class="item  error">No hay datos</p>
 		</div>
 	');
 } else {

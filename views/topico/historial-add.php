@@ -1,7 +1,7 @@
   
 <?php 
 
-if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
+if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico'  && !isset($_POST['crud']) ) {
    
     // $fecha =  date("Y-m-d");
     
@@ -24,16 +24,16 @@ $escuelas = $topico->getEscuelas();
             <form method="POST" class="formulario__entrada">
 
                 <div class="campo">
-                <label for="codigo" class="campo__label">DNI</label>
-                <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" required>
+                    <label for="codigo" class="campo__label">DNI</label>
+                    <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" required>
                 </div>
                 <div class="campo">
-                <label for="sexo_per" class="campo__label">Sexo</label>
-                  <select  class="campo__field--select" name="sexo_per"  placeholder="Sexo" required>
-                    <option value="s">SELECCIONE</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                  </select>
+                    <label for="sexo_per" class="campo__label">Sexo</label>
+                    <select  class="campo__field--select" name="sexo_per"  placeholder="Sexo" required>
+                        <option value="s">SELECCIONE</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
                 </div>
 
                 <div class="campo">
@@ -77,14 +77,14 @@ $escuelas = $topico->getEscuelas();
                 </div>
 
                 <div class="campo">
-                <label for="tipo_paciente" class="campo__label">Tipo de Paciente</label>
-                <select class="campo__field--select" name="tipo_paciente" placeholder="tipo paciente" required>
-                    <option value="">Tipo Paciente</option>
-					<option value="Alumno">Alumno</option>
-                    <option value="Docente">Docente</option>
-                    <option value="Administrativo">Administrativo</option>
-				
-				</select>
+                    <label for="tipo_paciente" class="campo__label">Tipo de Paciente</label>
+                    <select class="campo__field--select" name="tipo_paciente" placeholder="tipo paciente" required>
+                        <option value="">Tipo Paciente</option>
+                        <option value="Alumno">Alumno</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Administrativo">Administrativo</option>
+                    
+                    </select>
                 </div>
 
                 <div class="campo guardar_psi">
@@ -98,7 +98,7 @@ $escuelas = $topico->getEscuelas();
     </div>
 	', $escuela_select);	
 
-} else if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico' || $_SESSION['ROL'] == 'Administrador'&& $_POST['crud'] == 'set' ) {
+} else if( $_POST['r'] == 'historial-add' && $_SESSION['ROL'] == 'Topico'  && $_POST['crud'] == 'set' ) {
     $top_controller = new TopController();
     $indice = 0;
     $newDate = date("Y/m/d", strtotime($_POST['fech_nac']));

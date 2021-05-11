@@ -11,7 +11,7 @@ class HistorialOdontologico extends Model {
 		$this->query = "CALL INSERTAR_ODONTOLOGIA('$labios','$carrillos',  '$encias',
 		'$paladar', '$piso_boca', '$zona_retromoral', '$oro_faringe',
 		'$otros','$atm','$codigo',
-		'$diagnostico','$tratamiento', '$fecha')";
+		'$diagnostico','$tratamiento', '$fecha','1')";
 /*
 		$this->query = "REPLACE INTO psicologicos SET idpsicologia = '$idpsicologia', estado_psi = '$estado_psi',
 		descripcion_psi='$descripcion_psi', fecha='$fecha', idpaciente = '$idpaciente', diagnostico='$diagnostico',
@@ -40,6 +40,8 @@ class HistorialOdontologico extends Model {
 
 		return $data;
 	}
+
+
 	//Función que permite la eliminación de un historial odontológico
 	//Parámetros: ID del historial odontológico
 	public function del( $idodontologia = '' ) {
@@ -80,6 +82,25 @@ class HistorialOdontologico extends Model {
 		$this->query = ($idpaciente != '')
 			?"SELECT * FROM Vista_PacienteOdontologico WHERE dni_per = $idpaciente"
 			:"SELECT * FROM Vista_PacienteOdontologico;";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
+
+	public function getPre( $idodontologo = '' ) {
+		$this->query = ($idodontologo != '')
+			?"SELECT * FROM Vista_pre_odon WHERE idodontologo = $idodontologo"
+			:"SELECT * FROM Vista_pre_odon;";
 		
 		$this->get_query();
 

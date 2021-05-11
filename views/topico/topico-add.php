@@ -106,14 +106,14 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 
     if($_POST['tipo_consulta'] == 'examen'){
         $top = $top_controller->setNuevoExamen($new_top);
-        $mensaje = 'EL PACIENTE TIENE PENDIENTE EL EXAMEN MÉDICO, PSICOLÓGICO Y ODONTOLÓGICO';
+        //$mensaje = 'EL PACIENTE TIENE PENDIENTE EL EXAMEN MÉDICO, PSICOLÓGICO Y ODONTOLÓGICO';
     }else{
         $top = $top_controller->set($new_top);
-        $mensaje = 'INSERTADO CON ÉXITO';
+       // 
     }
-    
-    
-    if($top[0] == $mensaje ){
+
+    $mensaje = 'INSERTADO CON ÉXITO';
+    if($top[0] == 'INSERTADO CON ÉXITO'){
        
         $template = '
 		<div class="container">

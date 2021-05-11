@@ -56,6 +56,7 @@ class Router {
 				case 'topico':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('topico/topico');
 					else if( $_POST['r'] == 'topico-add' )  $controller->load_view('topico/topico-add');
+					else if( $_POST['r'] == 'topico-delete' )  $controller->load_view('topico/topico-delete');
 					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('topico/historial-add');
 					else if( $_POST['r'] == 'topico-edit' )  $controller->load_view('topico/topico-edit');
 					else if( $_POST['r'] == 'topico-report' )  $controller->load_login('topico/topico-report');

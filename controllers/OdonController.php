@@ -31,6 +31,10 @@ class OdonController {
 		return $this->model->getHistorial($idpaciente);
 	}
 
+	public function getPre( $idodontologo = '' ) {
+		return $this->model->getPre($idodontologo);
+	}
+
 
 
 
