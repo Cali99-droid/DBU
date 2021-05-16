@@ -79,7 +79,7 @@ class Router {
 					else if( $_POST['r'] == 'usuarios-add' )  $controller->load_view('usuario/usuarios-add');
 					else if( $_POST['r'] == 'usuario-edit' )  $controller->load_view('usuario/usuario-edit');
 					else if( $_POST['r'] == 'cuenta-delete' )  $controller->load_view('usuario/cuenta-delete');
-					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
+					else if( $_POST['r'] == 'cuenta-add' )  $controller->load_view('usuario/cuenta-add');
 					else if( $_POST['r'] == 'usuarios-buscar' )  $controller->load_view('usuario/usuarios-buscar');
 					break;
 

@@ -118,12 +118,12 @@ if( empty($topico) ) {
 				</form>
 	         </div>  
             
-            <form method="POST">
+            <form method="POST" class= "btn--hist">
 				<input type="hidden" name="r" value="historial-add">
-				<input class="boton boton--nuevo" type="submit" value="Aperturar Historial">
+				<input class="boton boton--nuevo  btnH" type="submit" value="Aperturar Historial">
 			</form>
 
-			<form method="POST">
+			<form method="POST" >
 			
 				<input type="hidden" name="r" value="topico-estadis">
 				<input class="boton--dash" type="submit" value="">

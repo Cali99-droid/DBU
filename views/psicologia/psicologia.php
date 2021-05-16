@@ -115,7 +115,7 @@ if( empty($psicologia) ) {
 				</div> 
 				
 				
-				<form method="POST">
+				<form method="POST" class = "estadis">
 				
 					<input type="hidden" name="r" value="psicologia-estadis">
 					<input class="boton--dash" type="submit" value="">

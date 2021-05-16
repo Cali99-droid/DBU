@@ -41,13 +41,21 @@ input[type=number]::-webkit-outer-spin-button {
     width: 90%;
     margin: 0 auto;
 }
-
 .contenido-principal{
-    display: grid;
-    grid-template-columns: 1fr 6fr;
+   
+    grid-template-columns: 1fr ;
     height: 100vh;
     
 }
+
+@media (min-width: 768px){
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 1fr  6fr;
+        height: 100vh; 
+    }
+}
+
 
 .barra{
     background-color: rgb(37,71,106);
@@ -153,13 +161,13 @@ input[type=number]::-webkit-outer-spin-button {
         gap: 1rem;
     }
 
-    .gestion__cuerpo--admin{
-        margin-top: 0;
-    }
+   
         
 }
 
-
+.gestion__cuerpo--admin{
+    margin-top: 0;
+}
 
 .gestion__grafico{
     grid-column: 1 / 4;
@@ -341,19 +349,75 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 /*Areas*/
-
 .gestion__area{
     
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem 6rem 0rem 6rem;
+    flex-direction: column;
+    gap: 2rem;
+ 
 
 }
+
+@media (min-width: 768px) {
+    .gestion__area{
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 6rem 0rem 6rem;
+        align-items: center;
+        flex-direction: row;
+    
+    }
+}
+
+
+
+.boton--dash{
+    height: 5rem;
+    width: 20rem;
+    background-image: url('../img/data.png');
+    background-size: 5rem;
+    background-position-x: 15rem;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    margin-top: 2rem;
+}  
+
+@media (min-width: 768px) {
+    .boton--dash{
+        height: 5rem;
+        width: 10rem;
+        background-image: url('../img/data.png');
+        background-size: 5rem;
+        background-position-x: 4rem;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: transparent;
+    }  
+}
+
+.btn--hist{
+    max-width: 100%;
+    align-items: center;
+    padding: 2rem 0rem;
+    
+}
+
+.btnH{
+   width: 100%;
+  
+}
+
+
+
+
+
+
 
 .busqueda{
      
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 .boton--buscar{
@@ -453,7 +517,7 @@ tr:hover {background-color:#ffffff;}
     text-align: center;
 }
 
-.boton--editar, .boton--eliminar, .boton--reporte, .boton--dash{
+.boton--editar, .boton--eliminar, .boton--reporte{
     height: 2rem;
     width: 3rem;
     background-image: url('../img/bx-edit.svg');
@@ -473,13 +537,6 @@ tr:hover {background-color:#ffffff;}
     background-image: url('../img/doc.svg');
 }
 
-.boton--dash{
-    height: 5rem;
-    width: 10rem;
-    background-image: url('../img/data.png');
-    background-size: 5rem;
-    background-position-x: 4rem;
-}
 
 
 
@@ -491,18 +548,31 @@ tr:hover {background-color:#ffffff;}
 
 /*form*/
 .formulario__entrada{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .formulario__entrada{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5rem;
+    }
+
 }
 
 .formulario__entrada--med{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
 
+}
+@media (min-width: 768px) {
+    .formulario__entrada--med{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        padding: 15px;
 
+    }
 }
 
 .medico{

@@ -24,13 +24,13 @@ if( empty($usuarios) ) {
 				<form method="POST">
 					<input type="hidden" name="r" value="usuarios-buscar">
 					<input class="campo__buscar" name = "nombre" type="number" placeholder="Todos">
-					<input class="boton boton--buscar" type="submit" value="Buscar">
+					<input class="boton boton--nuevo " type="submit" value="Buscar">
 				</form>
 	        </div> 
 	
-			<form method="POST">
+			<form method="POST" class= "btn--hist">
 				<input type="hidden" name="r" value="cuenta-add">
-				<input class="boton boton--nuevo" type="submit" value="Crear Cuenta">
+				<input class="boton boton--nuevo  btnH" type="submit" value="Crear Cuenta">
 			</form>
 		</div>
 		<div class="contenedor ">   
