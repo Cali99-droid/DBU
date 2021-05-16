@@ -43,8 +43,9 @@ class PacienteModel extends Model {
 	//Función que permite la eliminación de un historial psicológico
 	//Parámetros: ID del historial psicológico
 	public function del( $idpaciente = '' ) {
-		$this->query = "DELETE FROM  pacientes WHERE idpaciente = $idpaciente";
-		$this->del_query();
+		$this->query = "CALL ELIMINAR_PACIENTE($idpaciente)";
+		$row = $this->set_query();
+		return $row;
 	}
 	//Función que permite la actualización de un historial psicológico
 	//Parámetros: Conjunto de datos psicológicos específicos
@@ -52,9 +53,10 @@ class PacienteModel extends Model {
 		foreach ($pacientes_data as $key => $value) {
 			$$key = $value;
 		}
-// TODO
-		$this->query = "CALL ACTUALIZAR_Paciente('$estado_psi', '$descripcion_psi', '$fecha', $codigo,
-		'$diagnostico','$tratamiento', '$idpsicologia')";
+
+		$this->query = "CALL ACTUALIZAR_PACIENTE('$nom_per', '$ape_pat','$ape_mat_per',
+		'$codigo', '$sexo_per', '$celular', '$fech_nac', '$cod', '$escuela',
+		'$tipo_paciente', '$idpaciente')";
         $row = $this->set_query();
 		
 		return $row;
@@ -63,6 +65,26 @@ class PacienteModel extends Model {
 
 	public function getBuscar($dni_per) {
 		$this->query ="SELECT * FROM vista_pacientes where dni_per like '%$dni_per%'";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
+
+
+	public function getPaciente( $idpaciente = '' ) {
+		$this->query = ($idpaciente != '')
+			?"SELECT * FROM Vista_PACIENTE_uno WHERE idpaciente = $idpaciente"
+			:"SELECT * FROM Vista_PACIENTE_uno";
 		
 		$this->get_query();
 

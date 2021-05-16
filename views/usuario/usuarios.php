@@ -42,7 +42,6 @@ if( empty($usuarios) ) {
 						<th>Paciente</th>
 						<th>DNI</th>
 						<th>Nombre Usuario</th>
-						<th>Contraseña</th>
                         <th>Rol</th>
 						<th class="act">Acciones</th>
 						<th>
@@ -64,16 +63,15 @@ if( empty($usuarios) ) {
                         <td>' .  $usuarios[$n]['Paciente'] . '</td>
 						<td>' .  $usuarios[$n]['dni_per'] . '</td>
 						<td>' .  $usuarios[$n]['USER'] . '</td>
-						<td>' .  $usuarios[$n]['PASS'] . '</td>
 						<td >' .  $usuarios[$n]['ROL'] . '</td>
 						
 
 					
 						<td  class="action">
 							<form method="POST">
-								<input type="hidden" name="r" value="cuenta-edit">
-								<input type="hidden" name="idcargo" value="' .$usuarios[$n]['IDCARGO'] . '">
-								<input type="hidden" name="dni_per" value="' .$usuarios[$n]['dni_per'] . '">
+								<input type="hidden" name="r" value="usuario-edit">
+								<input type="hidden" name="IDCARGO" value="' .$usuarios[$n]['IDCARGO'] . '">
+								<input type="hidden" name="USER" value="' .$usuarios[$n]['USER'] . '">
 								<input class="boton--editar" type="submit" value="">
 							</form>
 					

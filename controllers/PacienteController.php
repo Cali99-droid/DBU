@@ -33,6 +33,10 @@ class PacienteController {
 		return $this->model->getBuscar($dni_per);
 	}
 
+	public function getPaciente( $idpaciente = '' ) {
+		return $this->model->getPaciente($idpaciente);
+	}
+
 
 
 }

@@ -68,10 +68,7 @@ if( $_POST['r'] == 'usuarios-add' && $_SESSION['ROL'] == 'Administrador' && !iss
                     <input  type="date" class="campo__field" name="fech_nac"  ></input>
                     </div>
     
-                    <div class="campo">
-                    <label for="cod" class="campo__label">Codigo</label>
-                    <input  type="text" class="campo__field" name="cod" ></input>
-                    </div>
+    
     
                     <div class="campo">
                     <label for="escuela" class="campo__label">Escuela</label>
@@ -129,8 +126,7 @@ if( $_POST['r'] == 'usuarios-add' && $_SESSION['ROL'] == 'Administrador' && !iss
 		'codigo' =>  $_POST['codigo'], 
         'sexo_per' => $_POST['sexo_per'], 
         'celular' => $_POST['celular'], 
-        'fech_nac' => $newDate, 
-        'cod' => $_POST['cod'],  
+        'fech_nac' => $newDate,  
 		'escuela' =>  $_POST['escuela'],
         'user' =>  $_POST['user'],
         'pass' =>  $_POST['pass'],

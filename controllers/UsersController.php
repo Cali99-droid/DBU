@@ -31,4 +31,13 @@ class UsersController {
 	public function getBuscar( $dni_per) {
 		return $this->model->getBuscar($dni_per);
 	}
+
+	public function update( $usuario_data = array() ) {
+		return $this->model->update($usuario_data);
+	}
+
+
+	public function getUsuario( $user = '' ) {
+		return $this->model->getUsuario($user);
+	}
 }

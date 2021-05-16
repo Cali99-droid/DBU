@@ -31,11 +31,7 @@ if( empty($pacientes) ) {
 			</div> 
 			
 			
-			<form method="POST">
-				<input type="hidden" name="r" value="pacientes-estadis">
-				<input class="boton--dash" type="submit" value="">
-				<p class="no-margin graf">Tablero informatívo</p>
-			</form>
+			
 		</div>
 
 		<div class="contenedor ">   
@@ -53,7 +49,7 @@ if( empty($pacientes) ) {
 						<th class="act">Acciones</th>
 						<th>
 						<form method="POST">
-								<input type="hidden" name="r" value="historial-add">
+								<input type="hidden" name="r" value="paciente-add">
 								<input class="boton boton--nuevo" type="submit" value="Nuevo">
 						</form>
 						</th>
@@ -79,14 +75,14 @@ if( empty($pacientes) ) {
 					
 						<td  class="action">
 							<form method="POST">
-								<input type="hidden" name="r" value="pacientes-edit">
+								<input type="hidden" name="r" value="paciente-edit">
 								<input type="hidden" name="idpaciente" value="' .$pacientes[$n]['IDPACIENTE'] . '">
 								<input type="hidden" name="dni_per" value="' .$pacientes[$n]['dni_per'] . '">
 								<input class="boton--editar" type="submit" value="">
 							</form>
 					
 							<form method="POST">
-								<input type="hidden" name="r" value="pacientes-delete">
+								<input type="hidden" name="r" value="paciente-delete">
 								<input type="hidden" name="idpaciente" value="' . $pacientes[$n]['IDPACIENTE'] . '">
 								<input class="boton--eliminar" type="submit" value="">
 							</form>

@@ -77,7 +77,7 @@ class Router {
 				case 'usuarios':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('usuario/usuarios');
 					else if( $_POST['r'] == 'usuarios-add' )  $controller->load_view('usuario/usuarios-add');
-					else if( $_POST['r'] == 'cuenta-add' )  $controller->load_view('usuario/cuenta-add');
+					else if( $_POST['r'] == 'usuario-edit' )  $controller->load_view('usuario/usuario-edit');
 					else if( $_POST['r'] == 'cuenta-delete' )  $controller->load_view('usuario/cuenta-delete');
 					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('odontologia/odontologia-report');
 					else if( $_POST['r'] == 'usuarios-buscar' )  $controller->load_view('usuario/usuarios-buscar');
@@ -86,11 +86,16 @@ class Router {
 				case 'pacientes':
 					if( !isset( $_POST['r'] ) )  $controller->load_view('paciente/pacientes');
 					else if( $_POST['r'] == 'paciente-edit' )  $controller->load_view('paciente/paciente-edit');
-					else if( $_POST['r'] == 'historial-add' )  $controller->load_view('./topico/historial-add');
-					else if( $_POST['r'] == 'cuenta-delete' )  $controller->load_view('paciente/cuenta-delete');
+					else if( $_POST['r'] == 'paciente-add' )  $controller->load_view('paciente/paciente-add');
+					else if( $_POST['r'] == 'paciente-delete' )  $controller->load_view('paciente/paciente-delete');
 					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('/pacientes/odontologia-report');
 					else if( $_POST['r'] == 'usuarios-buscar' )  $controller->load_view('paciente/usuarios-buscar');
 					break;
+				
+					case 'perfil':
+						if( !isset( $_POST['r'] ) )  $controller->load_view('perfil');
+						
+						break;
 
 				case 'salir':
 					$user_session = new SessionController();
@@ -128,6 +133,9 @@ class Router {
 						$_SESSION['Paciente'] = $row['Paciente'];
 						$_SESSION['ROL'] = $row['ROL'];
 						$_SESSION['dni_per'] = $row['dni_per'];
+						$_SESSION['fech_nac'] = $row['fech_nac'];
+						$_SESSION['celular'] = $row['celular'];
+						$_SESSION['USER'] = $row['USER'];
 					//	$_SESSION['idrol'] = $row['idrol'];
 					}
 					header('Location: ./');

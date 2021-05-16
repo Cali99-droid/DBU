@@ -86,5 +86,36 @@ class UsersModel extends Model {
 		return $data;
 	}
 
+	public function update( $usuario_data = array() ) {
+		foreach ($usuario_data as $key => $value) {
+			$$key = $value;
+		}
+		$this->query = "CALL EDITAR_CUENTA('$nom_per', '$ape_pat','$ape_mat_per',
+		'$codigo', '$sexo_per', '$celular', '$fech_nac', '', '$escuela',
+		'$user', '$pass', '$rol', '$idcargo')";
+        $row = $this->set_query();
+		
+		return $row;
+	}
+
+
+	public function getUsuario( $user = '' ) {
+		$this->query = ($user != '')
+			?"SELECT * FROM Vista_CUENTAS_uno WHERE IDCARGO = '$user'"
+			:"SELECT * FROM Vista_CUENTAS_uno";
+		
+		$this->get_query();
+
+		$num_rows = count($this->rows);
+
+		$data = array();
+
+		foreach ($this->rows as $key => $value) {
+			array_push($data, $value);
+		}
+
+		return $data;
+	}
+
 
 }

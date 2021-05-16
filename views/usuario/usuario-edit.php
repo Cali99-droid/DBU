@@ -1,7 +1,7 @@
 <?php 
-$pas_controller = new PacienteController();
+$user_controller = new UsersController();
 
-if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
+if($_POST['r'] == 'usuario-edit' && $_SESSION['ROL'] == 'Administrador' && !isset($_POST['crud']) ) {
 
     $topico = new TopController();
     $escuelas = $topico->getEscuelas(); 
@@ -11,13 +11,13 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
 		$escuela_select .= '<option value="' . $escuelas[$n]['escuela'] . '">' . $escuelas[$n]['escuela'] . '</option>';
 	}
 
-	$pas = $pas_controller->getPaciente($_POST['idpaciente']);
-    $idp = $_POST['idpaciente'];
+	$user = $user_controller->getUsuario($_POST['IDCARGO']);
+    $idc = $_POST['IDCARGO'];
     $fecha =  date("Y-m-d");
-	if( empty($pas) ) {
+	if( empty($user) ) {
 		$template = '
 			<div class="container">
-				<p class="item  error">No existe el Paciente <b>%s</b></p>
+				<p class="item  error">No existe el usuario <b>%s</b></p>
 			</div>
 			<script>
 				window.onload = function (){
@@ -26,7 +26,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
 			</script>
 		';
 
-		printf($template, $_POST['idpaciente']);
+		printf($template, $_POST['IDCARGO']);
 	} else {
 		
 		// $status_controller = new StatusController();
@@ -38,7 +38,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
 		// 	$status_select .= '<option value="' . $status[$n]['status_id'] . '"' . $selected . '>' . $status[$n]['status'] . '</option>';
 		// }
 
-		$template_pas = '
+        $template_user = '
         <div class="gestion">
         <div class="gestion__nombre">
             <h2 class="no-margin gestion__titulo">Editar Datos</h2>
@@ -87,10 +87,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
                 <input  type="text" class="campo__field"  value="%s" name="fech_nac"  ></input>
                 </div>
 
-                <div class="campo">
-                <label for="cod" class="campo__label">Codigo</label>
-                <input  type="text" class="campo__field"  value="%s" name="cod" ></input>
-                </div>
+      
 
                 <div class="campo">
                 <label for="escuela" class="campo__label">Escuela</label>
@@ -101,23 +98,36 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
                 </div>
 
                 <div class="campo">
-                    <label for="tipo_paciente" class="campo__label">Tipo de Paciente</label>
-                    <select class="campo__field--select" name="tipo_paciente" placeholder="tipo paciente" required>
-                        <option value="">Tipo Paciente</option>
-                        <option value="Alumno">Alumno</option>
-                        <option value="Docente">Docente</option>
-                        <option value="Administrativo">Administrativo</option>
+                <label for="user" class="campo__label">Usuario</label>
+                <input  type="text" class="campo__field" name="user" value="%s"></input>
+                </div>
+
+                <div class="campo">
+                <label for="pass" class="campo__label">Contraseña</label>
+                <input  type="password" class="campo__field" name="pass" value="%s"></input>
+                </div>
+
+                <div class="campo">
+                <label for="rol" class="campo__label">Rol</label>
+                <select class="campo__field--select" name="rol" placeholder="rol" required>
+                    <option value="">ROL</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Topico">Topico</option>
+                    <option value="Medico">Medico</option>
+                    <option value="psicologo">psicologo</option>
+                    <option value="Odontologo">Odontologo</option>
+                    <option value="Estudiante">Estudiante</option>
                     
-                    </select>
+                </select>
                 </div>
 
             
-                <input  type="hidden" name="idpaciente" class="campo__field"  value="%s" name="cod" ></input>
+                <input  type="hidden" name="idcargo" class="campo__field"  value="%s"  ></input>
   
 
                 <div class="campo guardar_psi">
                     <input type="submit" value="Guardar" class="boton boton--guardar ">
-                    <input type="hidden" name="r" value="paciente-edit">
+                    <input type="hidden" name="r" value="usuario-edit">
 				    <input type="hidden" name="crud" value="set">
                 </div>
             </form>
@@ -127,42 +137,46 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
 	';
 
 		printf(
-			$template_pas,
-			$pas[0]['dni_per'],
-			$pas[0]['nom_per'],
-			$pas[0]['ape_pat'],
-			$pas[0]['ape_mat_per'],
-            $pas[0]['celular'],
-            $pas[0]['fech_nac'],
-            $pas[0]['CODIGO'],
+			$template_user,
+			$user[0]['dni_per'],
+			$user[0]['nom_per'],
+			$user[0]['ape_pat'],
+			$user[0]['ape_mat_per'],
+            $user[0]['celular'],
+            $user[0]['fech_nac'],
             $escuela_select,
-            $idp
+            $user[0]['USER'],
+            MD5($user[0]['PASS']),
+            $idc
         
 		);	
 	}
 
-} else if( $_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador'&& $_POST['crud'] == 'set' ) {	
-
-	$save_pas = array(
-
-		'codigo' =>  $_POST['codigo'], 
+} else if( $_POST['r'] == 'usuario-edit' && $_SESSION['ROL'] == 'Administrador'&& $_POST['crud'] == 'set' ) {	
+    $newDate = date("Y/m/d", strtotime($_POST['fech_nac']));
+    $new_user = array(
+		
 		'nom_per' =>  $_POST['nom_per'], 
-		'ape_pat' =>  $_POST['ape_pat'],
-        'ape_mat_per' =>  $_POST['ape_mat_per'],
-		'celular' =>  $_POST['celular'],
-		'fech_nac' =>  $_POST['fech_nac'],
-        'cod' => $_POST['cod'],
-        'escuela' =>  $_POST['escuela'],
-        'tipo_paciente' =>  $_POST['tipo_paciente'],
-        'sexo_per' => $_POST['sexo_per'],
-        'idpaciente' => $_POST['idpaciente']
-
+		'ape_pat' =>  $_POST['ape_pat'], 
+		'ape_mat_per' => $_POST['ape_mat_per'],
+		'codigo' =>  $_POST['codigo'], 
+        'sexo_per' => $_POST['sexo_per'], 
+        'celular' => $_POST['celular'], 
+        'fech_nac' => $newDate,  
+		'escuela' =>  $_POST['escuela'],
+        'user' =>  $_POST['user'],
+        'pass' =>  $_POST['pass'],
+        'rol' =>  $_POST['rol'],
+        'idcargo' => $_POST['idcargo']
+        
+	
 	);
 
-	$pas = $pas_controller->update($save_pas);
-    $mensajeC = 'INSERTADO CON ÉXITO';
-    $mensajeU = 'PACIENTE ACTUALIZADO CON ÉXITO';
-    if($pas[0] == $mensajeU){
+
+	$user = $user_controller->update($new_user);
+
+    $mensajeU = 'USUARIO ACTUALIZADO CON ÉXITO';
+    if($user[0] == $mensajeU){
         $template = '
 		<div class="container">
 			<p class="exito">%s</p>
@@ -174,7 +188,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
             }, 3000)
         }
         window.onload = function () {
-            reloadPage("pacientes")
+            reloadPage("usuarios")
         }
         </script>
         
@@ -192,7 +206,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
             }, 2000)
         }
         window.onload = function () {
-         reloadPage("pacientes")
+         reloadPage("usuarios")
          }
          </script>
   
@@ -200,7 +214,7 @@ if($_POST['r'] == 'paciente-edit' && $_SESSION['ROL'] == 'Administrador' && !iss
 	';
     }
 
-        printf($template,  $pas[0]);
+        printf($template,  $user[0]);
 
 } else {
 	$controller = new ViewController();
