@@ -654,3 +654,15 @@ tr:hover {background-color:#ffffff;}
     padding: 4rem;
     font-size: 1.5rem;
 }
+
+
+.dash{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/dash.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    background-origin: content-box;
+    border: none;
+}

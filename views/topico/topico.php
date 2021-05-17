@@ -124,7 +124,6 @@ if( empty($topico) ) {
 			</form>
 
 			<form method="POST" >
-			
 				<input type="hidden" name="r" value="topico-estadis">
 				<input class="boton--dash" type="submit" value="">
 				<p class="no-margin graf">Tablero informatívo</p>

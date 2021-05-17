@@ -10,7 +10,7 @@ class UsersModel extends Model {
 		}
 
 		$this->query = "CALL CREAR_CUENTA('$nom_per', '$ape_pat','$ape_mat_per',
-		'$codigo', '$sexo_per', '$celular', '$fech_nac', '$cod', '$escuela',
+		'$codigo', '$sexo_per', '$celular', '$fech_nac', '', '$escuela',
 		'$user', '$pass', '$rol')";
 	    $row = $this->set_query();
 		

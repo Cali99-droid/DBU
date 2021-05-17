@@ -90,14 +90,21 @@ class Router {
 					else if( $_POST['r'] == 'paciente-edit' )  $controller->load_view('paciente/paciente-edit');
 					else if( $_POST['r'] == 'paciente-add' )  $controller->load_view('paciente/paciente-add');
 					else if( $_POST['r'] == 'paciente-delete' )  $controller->load_view('paciente/paciente-delete');
-					else if( $_POST['r'] == 'odontologia-report' )  $controller->load_login('/pacientes/odontologia-report');
-					else if( $_POST['r'] == 'usuarios-buscar' )  $controller->load_view('paciente/usuarios-buscar');
+					else if( $_POST['r'] == 'paciente-buscar' )  $controller->load_view('paciente/paciente-buscar');
 					break;
-				
-					case 'perfil':
-						if( !isset( $_POST['r'] ) )  $controller->load_view('perfil');
-						
-						break;
+
+				case 'analisis':
+					if( !isset( $_POST['r'] ) )  $controller->load_view('analisis');
+					else if( $_POST['r'] == 'topico-estadis' )  $controller->load_view('topico/topico-estadis');
+					else if( $_POST['r'] == 'medicina-estadis' )  $controller->load_view('medico/medicina-estadis');
+					else if( $_POST['r'] == 'psicologia-estadis' )  $controller->load_view('psicologia/psicologia-estadis');
+					else if( $_POST['r'] == 'odontologia-estadis' )  $controller->load_view('odontologia/odontologia-estadis');
+					
+					break;
+					
+				case 'perfil':
+					if( !isset( $_POST['r'] ) )  $controller->load_view('perfil');
+					break;
 
 				case 'salir':
 					$user_session = new SessionController();

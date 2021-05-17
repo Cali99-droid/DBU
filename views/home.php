@@ -83,7 +83,7 @@ $templateAdmin = '
                     
                 </a>
 
-                <a class="card card--admin" href="estadisticas">
+                <a class="card card--admin" href="analisis">
                     <div class="card__img"  >
                         <img class="card__port" src="public/img/estadistica.svg" alt="">
                         <p  class="card__enlace">Analisis</p>

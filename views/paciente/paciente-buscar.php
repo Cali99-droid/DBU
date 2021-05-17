@@ -6,13 +6,23 @@
 
 
 $pas_controller = new PacienteController();
-$pacientes = $pas_controller->get();
+$pacientes = $pas_controller->getBuscar($_POST['nombre']);
 
 if( empty($pacientes) ) {
 	print( '
 		<div class="container">
 			<p class="item  error">No hay Pacientes</p>
 		</div>
+        <script>
+        function reloadPage(url) {
+            setTimeout(function (){
+                window.location.href = url
+            }, 2000)
+        }
+        window.onload = function () {
+         reloadPage("pacientes")
+         }
+         </script>
 	');
 } else {
 	$template_pacientes = '

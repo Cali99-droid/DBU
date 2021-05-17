@@ -2,8 +2,6 @@
 
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 
-
-
 $psi_controller = new PsiController();
 $psicologia = $psi_controller->getBuscar($_POST['nombre']);
 
