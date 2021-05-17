@@ -1,4 +1,6 @@
 <?php 
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 class UsersModel extends Model {
 	//Función que permite la creación de una nueva cuenta de usuario
 	//Parámetros: Conjunto de datos específicos de un usuario

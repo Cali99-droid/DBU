@@ -1,7 +1,8 @@
 <?php 
 
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
-
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 $user_controller = new UsersController();
 $usuarios = $user_controller->get();
 

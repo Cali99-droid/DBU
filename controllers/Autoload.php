@@ -1,4 +1,7 @@
+
 <?php 
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 class Autoload
 {	//Función que permite inicializar los modelos y controladores
 	public function __construct()

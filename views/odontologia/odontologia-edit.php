@@ -1,6 +1,7 @@
 <?php 
 $odon_controller = new Odoncontroller();
-
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 if($_POST['r'] == 'odontologia-edit' && $_SESSION['ROL'] == 'Odontologo' && !isset($_POST['crud']) ) {
 
 	$odon = $odon_controller->get($_POST['idodontologo']);

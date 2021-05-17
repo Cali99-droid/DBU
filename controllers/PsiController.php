@@ -17,7 +17,8 @@ class PsiController {
 		return $this->model->get($psicologia_id);
 	}
 
-	
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 
 
 	public function del( $psicologia_id = '' ) {

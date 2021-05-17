@@ -1,5 +1,7 @@
 <?php 
 require_once("Model.php");
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 class PacienteModel extends Model {
 	//Función que permite la inserción de datos desde el modelo a la vista de historial psicológico
 	//Parámetros: Conjunto de datos psicológicos específicos

@@ -1,5 +1,6 @@
 <?php 
-
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 if($_SESSION['ROL'] == 'Estudiante'  ) {
 	$med_controller = new MedController();

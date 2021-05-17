@@ -1,4 +1,6 @@
 <?php 
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 class Router {
 	public $route;
 

@@ -1,4 +1,6 @@
 <?php 
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 require_once("Model.php");
 class HistorialMedico extends Model {
 	//Función que permite la inserción de datos desde el modelo a la vista de historial médico

@@ -1,4 +1,6 @@
 <?php 
+// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
+// https://github.com/Cali99-droid
 //require_once("C:/wamp64/www/Proyectos/DBU/models/HistorialPsicologico.php");
 class PacienteController {
 	private $model;
