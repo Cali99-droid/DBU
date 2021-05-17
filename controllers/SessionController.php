@@ -1,4 +1,8 @@
 <?php
+/** 
+ * Controlador de session
+ * 
+ * */ 
 class SessionController {
 	private $session;
 	//Función que instancia un nuevo modelo de usuario
@@ -10,8 +14,7 @@ class SessionController {
 	public function login($user, $pass) {
 		return $this->session->validate_user($user, $pass);
 	}
-// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
-// https://github.com/Cali99-droid
+
 	//Función que permite cerrar la sesión
 	public function logout() {
 		session_start();

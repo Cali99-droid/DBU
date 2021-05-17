@@ -1,5 +1,6 @@
 <?php 
-//require_once("C:/wamp64/www/Proyectos/DBU/models/HistorialPsicologico.php");
+
+//Controlador Psicologia
 class PsiController {
 	private $model;
 	//Función que instacia un nuevo historial psicológico
@@ -17,10 +18,8 @@ class PsiController {
 		return $this->model->get($psicologia_id);
 	}
 
-// Autor @Carlos Orellano Rondan - Orellano428@gmail.com
-// https://github.com/Cali99-droid
-
-
+    // funcion que elimina un historial psicologico
+	// Parámetros: ID de historial psicológico
 	public function del( $psicologia_id = '' ) {
 		return $this->model->del($psicologia_id);
 	}
@@ -29,12 +28,14 @@ class PsiController {
 	public function update( $psicologia_data = array() ) {
 		return $this->model->update($psicologia_data);
 	}
-
+    //Función que permite buscar datos de un historial psicológico 
+	//Parámetros: DNI persona
 	public function getBuscar( $dni_per) {
 		return $this->model->getBuscar($dni_per);
 	}
 
-
+    //Función que permite buscar datos de un historial psicológico 
+	//Parámetros: DNI persona
 	public function getHistorial( $idpaciente) {
 		return $this->model->getHistorial($idpaciente);
 	}

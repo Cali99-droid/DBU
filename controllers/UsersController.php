@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Controlador de Usuario
+ */
 class UsersController {
 	private $model;
 	
@@ -12,14 +15,16 @@ class UsersController {
 		return $this->model->set($user_data);
 	}
 
-
-
+	//funcion para asignar una cuenta a una persona
+	//Parametro datos de asignacion
 	public function asignarCuenta( $user_data = array() ) {
 		return $this->model->asignarCuenta($user_data);
 	}
-
-	
-
+    
+	/**funcion que obtiene un usuario
+	 * 
+	 * param id de usuario
+	*/
 	public function get( $user_id = '' ) {
 		return $this->model->get($user_id);
 	}
@@ -28,15 +33,26 @@ class UsersController {
 	public function del( $user_id = '' ) {
 		return $this->model->del($user_id);
 	}
+
+	/**funcion que buscar un usuario
+	 * 
+	 * param DNI usuario
+	*/
 	public function getBuscar( $dni_per) {
 		return $this->model->getBuscar($dni_per);
 	}
-
+    /**funcion que actualiza un usuario
+	 * 
+	 * param DNI usuario
+	*/
 	public function update( $usuario_data = array() ) {
 		return $this->model->update($usuario_data);
 	}
 
-
+    /**funcion que obtiene un usuario
+	 * 
+	 * param id de usuario
+	*/
 	public function getUsuario( $user = '' ) {
 		return $this->model->getUsuario($user);
 	}

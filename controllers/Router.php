@@ -1,19 +1,23 @@
 <?php 
 // Autor @Carlos Orellano Rondan - Orellano428@gmail.com
 // https://github.com/Cali99-droid
+
+// clase Router - Ruta para controlar las vistas por POST o HREF
 class Router {
 	public $route;
-
+    
+	//Funcion Constructor de enrutador
+	//PARAM: la ruta que se iniciara
 	public function __construct($route) {
-		//http://php.net/manual/es/function.session-start.php
-		//http://php.net/manual/es/session.configuration.php
-		//buscar opciones en el PHP.INI
+		
+		//Opciones de session
 		$session_options = array(
 			'use_only_cookies' => 1,
 			'auto_start' => 1,
 			'read_and_close' => true
 		);
-
+        
+		//Verifica que se haya iniciado session
 		if( !isset($_SESSION) )  session_start($session_options);
 
 		if( !isset($_SESSION['ok']) )  $_SESSION['ok'] = false;
@@ -26,9 +30,11 @@ class Router {
 				//$_SESSION['tit'] = "de Psicologia";
 				
 		
-
+            //instancia un controllador de vista
 			$controller = new ViewController();
-
+             
+			// swicth que evalua el las ruta segun la interaccion del usuario
+			//
 			switch ($this->route) {
 
 				case 'home':
@@ -118,15 +124,18 @@ class Router {
 					break;
 			}
 		} else {
+			// si no se lleno el usuario y pass
 			if( !isset($_POST['user']) && !isset($_POST['pass']) ) {
 				//mostrar un formulario de autenticación
 				$login_form = new ViewController();
 				$login_form->load_login('login');
 			}
 			else {
+				// si esta lleno el usuario y pass
 				$user_session = new SessionController();
+				//verifica session
 				$session = $user_session->login($_POST['user'], $_POST['pass']);
-
+                //si sesion es válida
 				if( empty($session) ) {
 					//echo 'El usuario y el password son incorrectos';
 					$login_form = new ViewController();
@@ -137,7 +146,7 @@ class Router {
 					//var_dump($session);
 					
 					$_SESSION['ok'] = true;
-
+                    // llena arreglo con los datos del usuario que inicio session
 					foreach ($session as $row) {
 						$_SESSION['Paciente'] = $row['Paciente'];
 						$_SESSION['ROL'] = $row['ROL'];

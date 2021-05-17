@@ -1,6 +1,10 @@
 <?php
 // Autor @Carlos Orellano Rondan - Orellano428@gmail.com
 // https://github.com/Cali99-droid 
+
+/**
+ * controlador de vistas
+ */
 class ViewController {
 	private static $view_path = './views/';
 	//Función que permite cargar las distintas vistas

@@ -1,6 +1,9 @@
 <?php 
 // Autor @Carlos Orellano Rondan - Orellano428@gmail.com
 // https://github.com/Cali99-droid
+/*
+Clase padre MODELO
+*/
 abstract class Model {
 	//Declaración  e implementación de métodos abstractos
 	private static $db_host = '127.0.0.1';
