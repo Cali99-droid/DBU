@@ -5,7 +5,7 @@ cuenta con 5 areas:
 - Odontologia
 - medicina
 - Triaje
-
+- Administrador
 ---------------------------------
 
 El proyecto esta desarrollado bajo el modelo vista controllador, usa la libreria FPDF, y esta desarrollado netamente en el lenguaje PHP 7
