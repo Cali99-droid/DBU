@@ -42,7 +42,8 @@ if($_POST['r'] == 'odontologia-edit' && $_SESSION['ROL'] == 'Odontologo' && !iss
 
                 <div class="campo">
                 <label for="codigo" class="campo__label">DNI</label>
-                <input  class="campo__field num" type="number" value="%s" placeholder="DNI " name="codigo" required>
+                <input  class="campo__field num" type="number" value="%s" placeholder="DNI "  disabled>
+                <input  class="campo__field num" type="hidden" placeholder="DNI " name="codigo" value="%s" >
                 </div>
 
                 <div class="campo">
@@ -130,6 +131,7 @@ if($_POST['r'] == 'odontologia-edit' && $_SESSION['ROL'] == 'Odontologo' && !iss
 		printf(
 			$template_odon,
             $dni,
+            $dni,
 			$odon[0]['fecha'],
 			$odon[0]['labios'],
 			$odon[0]['carrillos'],
@@ -212,7 +214,7 @@ if($_POST['r'] == 'odontologia-edit' && $_SESSION['ROL'] == 'Odontologo' && !iss
 
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 // window.onload = function () {

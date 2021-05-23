@@ -2,13 +2,14 @@
 // Autor @Carlos Orellano Rondan - Orellano428@gmail.com
 // https://github.com/Cali99-droid
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
+$template_medicina = '';
 if($_SESSION['ROL'] == 'Estudiante'  ) {
 	$med_controller = new MedController();
     $medicina = $med_controller->getHistorial($_SESSION['dni_per']);
 	if( empty($medicina) ) {
 		print( '
 			<div class="container">
-				<p class="item  error">No hay Datos del paciente</p>
+				<p class="item  error">No cuenta con consultas medicas</p>
 			</div>
 		');
 	} else {

@@ -75,5 +75,5 @@ if( $_POST['r'] == 'psicologia-delete' && $_SESSION['ROL'] == 'psicologo' && !is
 	printf($template, $_POST['idpsicologia']);
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404');
+	$controller->load_view('error401');
 }

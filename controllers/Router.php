@@ -118,7 +118,7 @@ class Router {
 					break;
 				
 				default:
-					$controller->load_view('error403');
+					$controller->load_view('error404');
 				//	$user_session = new SessionController();
 				//	$user_session->logout();
 					break;

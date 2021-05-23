@@ -170,7 +170,7 @@ if( $_POST['r'] == 'odontologia-add' && $_SESSION['ROL'] == 'Odontologo' && !iss
 	
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 /*  */

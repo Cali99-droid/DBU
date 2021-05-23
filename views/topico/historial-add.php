@@ -118,7 +118,7 @@ $escuelas = $topico->getEscuelas();
 	);
 
 	$top = $top_controller->setNuevoHistorial($new_top);
-    $mensaje = 'PACIENTE REGISTRADO CON ÉXITO';
+    $mensaje = 'INSERTADO CON ÉXITO';
     
     if($top[0] == $mensaje ){
        
@@ -166,7 +166,7 @@ $escuelas = $topico->getEscuelas();
 	
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 /*  */

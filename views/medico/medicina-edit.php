@@ -107,7 +107,8 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
                 <div class="campo campo__med">
                     <div class="dni__med">
                         <label for="codigo" class="campo__label medico">DNI</label>
-                        <input  class="campo__field num" type="number" value="%s"  placeholder="DNI " name="codigo" required>
+                        <input  class="campo__field num" type="number" value="%s"  placeholder="DNI" disabled>
+                        <input  class="campo__field num" type="hidden" value="%s"  placeholder="DNI" name="codigo" >
                     </div>
                    
                     <label for="fecha" class="campo__label medico">Fecha</label>
@@ -146,6 +147,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
             $med[0]['sintomas'],
             $med[0]['diagnostico'],
             $med[0]['tratamiento'],
+            $dni,
             $dni,
             $med[0]['fecha'],
             $med[0]['idmedico'],
@@ -218,7 +220,7 @@ if($_POST['r'] == 'medicina-edit' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
 
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 // window.onload = function () {

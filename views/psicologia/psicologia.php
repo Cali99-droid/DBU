@@ -2,14 +2,14 @@
 // Autor @Carlos Orellano Rondan - Orellano428@gmail.com
 // https://github.com/Cali99-droid
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
-
+$template_psicologia = '';
 if($_SESSION['ROL'] == 'Estudiante'  ) {
 $psi_controller = new PsiController();
 $psicologia = $psi_controller->getHistorial($_SESSION['dni_per']);
 if( empty($psicologia) ) {
 	print( '
 		<div class="container">
-			<p class="item  error">No hay Status</p>
+			<p class="item  error">No cuenta con consultas psicologicas</p>
 		</div>
 	');
 } else {

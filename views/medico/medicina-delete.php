@@ -75,5 +75,5 @@ if( $_POST['r'] == 'medicina-delete' && $_SESSION['ROL'] == 'Medico' && !isset($
 	printf($template, $_POST['idmedico']);
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404');
+	$controller->load_view('error401');
 }

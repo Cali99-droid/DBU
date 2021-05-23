@@ -121,7 +121,7 @@ if( $_POST['r'] == 'psicologia-add' && $_SESSION['ROL'] == 'psicologo' && !isset
 	
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 /*  */

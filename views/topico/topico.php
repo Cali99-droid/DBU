@@ -1,6 +1,7 @@
 <?php 
 
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
+$template_topico = '';
 if($_SESSION['ROL'] == 'Estudiante'  ) {
 
 	$top_controller = new TopController();
@@ -9,7 +10,7 @@ if($_SESSION['ROL'] == 'Estudiante'  ) {
 	if( empty($topico) ) {
 		print( '
 			<div class="container">
-				<p class="item  error">No hay Status</p>
+				<p class="item  error">No cuenta con consultas topico</p>
 			</div>
 		');
 	} else {

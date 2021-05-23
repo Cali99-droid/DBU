@@ -1,5 +1,5 @@
 <?php 
-
+$template_odontologia = '';
 //require("C:/wamp64/www/Proyectos/DBU/controllers/PsiController.php");
 if($_SESSION['ROL'] == 'Estudiante'  ) {
 	$odon_controller = new OdonController();
@@ -7,7 +7,7 @@ if($_SESSION['ROL'] == 'Estudiante'  ) {
 	if( empty($odontologia) ) {
 		print( '
 			<div class="container">
-				<p class="item  error">No hay Status</p>
+				<p class="item  error">No cuenta con consultas odontologicas</p>
 			</div>
 		');
 	} else {

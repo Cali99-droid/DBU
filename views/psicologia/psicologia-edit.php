@@ -41,7 +41,8 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['ROL'] == 'psicologo' && !isset
             
                   <div class="campo">
                     <label for="codigo" class="campo__label">DNI</label>
-                    <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" value="%s" required >
+                    <input  class="campo__field num" type="number" placeholder="DNI "  value="%s" disabled >
+                    <input  class="campo__field num" type="hidden" placeholder="DNI " name="codigo" value="%s" >
                     </div>
 
           
@@ -94,6 +95,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['ROL'] == 'psicologo' && !isset
 		printf(
 			$template_psi,
 		
+            $dni,
             $dni,
 			$psi[0]['estado_psi'],
 			$psi[0]['descripcion_psi'],
@@ -164,7 +166,7 @@ if($_POST['r'] == 'psicologia-edit' && $_SESSION['ROL'] == 'psicologo' && !isset
 
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 // window.onload = function () {

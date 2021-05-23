@@ -113,7 +113,7 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
     }
 
     $mensaje = 'INSERTADO CON ÉXITO';
-    if($top[0] == 'INSERTADO CON ÉXITO'){
+    if($top[0] == $mensaje){
        
         $template = '
 		<div class="container">
@@ -159,7 +159,7 @@ if( $_POST['r'] == 'topico-add' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 	
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 /*  */

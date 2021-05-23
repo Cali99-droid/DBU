@@ -75,5 +75,5 @@ if( $_POST['r'] == 'odontologia-delete' && $_SESSION['ROL'] == 'Odontologo' && !
 	printf($template, $_POST['idodontologo']);
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404');
+	$controller->load_view('error401');
 }

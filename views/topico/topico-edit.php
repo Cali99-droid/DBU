@@ -33,7 +33,8 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 
                 <div class="campo">
                 <label for="codigo" class="campo__label">DNI</label>
-                <input  class="campo__field num" type="number" placeholder="DNI " name="codigo" value="%s" required>
+                <input  class="campo__field num" type="number" placeholder="DNI " value="%s" disabled>
+                <input  class="campo__field num" type="hidden" placeholder="DNI " name="codigo" value="%s" >
                 </div>
 
                 <div class="campo">
@@ -107,6 +108,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 		printf(
 			$template_top,		
             $dni,
+            $dni,
 			$top[0]['fecha'],
 			$top[0]['peso_pas'],
 			$top[0]['talla_pas'],
@@ -177,7 +179,7 @@ if($_POST['r'] == 'topico-edit' && $_SESSION['ROL'] == 'Topico' && !isset($_POST
 
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 // window.onload = function () {

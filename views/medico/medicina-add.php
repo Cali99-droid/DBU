@@ -175,7 +175,7 @@ if( $_POST['r'] == 'medicina-add' && $_SESSION['ROL'] == 'Medico' && !isset($_PO
 	
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404'); //401
+	$controller->load_view('error401'); //401
 }
 
 /*  */

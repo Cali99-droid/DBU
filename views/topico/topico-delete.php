@@ -75,5 +75,5 @@ if( $_POST['r'] == 'topico-delete' && $_SESSION['ROL'] == 'Topico' && !isset($_P
 	printf($template, $_POST['idtopico']);
 } else {
 	$controller = new ViewController();
-	$controller->load_view('error404');
+	$controller->load_view('error401');
 }
